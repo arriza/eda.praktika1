@@ -37,6 +37,7 @@ public class AktoreZerrenda {
 	public boolean badagoZerrendan(String izenOsoa){
 		return z1.containsKey(izenOsoa);
 	}
+	public void gehituAktorea(Aktorea a){}
 	
 	
 }

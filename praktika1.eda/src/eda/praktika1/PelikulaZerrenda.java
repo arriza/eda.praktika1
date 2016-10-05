@@ -20,7 +20,9 @@ public class PelikulaZerrenda {
 		}
 		return PelikulaZerrenda.nirePelikulaZerrenda;
 	}
-	
+	public void gehituPelikula(Pelikula p){
+		
+	}
 	public int tamaina() {
 		return zerrenda.size();
 	}

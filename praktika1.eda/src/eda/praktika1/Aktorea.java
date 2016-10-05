@@ -6,7 +6,7 @@ public class Aktorea {
 	//Atributuak
 		private String izenOsoa;
 		private ArrayList<Pelikula> listaPelikulak=new ArrayList<Pelikula>();
-		//prueba
+		
 		//Eraikitzailea
 		
 		public Aktorea (String izenOsoa){
