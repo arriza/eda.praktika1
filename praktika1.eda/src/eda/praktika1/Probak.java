@@ -25,7 +25,7 @@ public class Probak {
 				 linea = entrada.nextLine();
 				 peli = reader.readLine().split("\\s--->");
 				// peli = linea.split("\\s--->\\s");
-				 System.out.println("Pelikula izenburua: "+peli[1]);
+				 System.out.println("Pelikula izenburua: "+peli[0]);
 			//sortu pelikula objektua
 			p = new Pelikula(peli[0]);
 			//pelikula pelikulen katalogora gehitu
