@@ -37,7 +37,15 @@ public class AktoreZerrenda {
 	public boolean badagoZerrendan(String izenOsoa){
 		return z1.containsKey(izenOsoa);
 	}
-	public void gehituAktorea(Aktorea a){}
+	public void gehituAktorea(Aktorea a){
+		//konprobatu aktorea zerrendan dagoen jada
+		if(!AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(a.getIzena())){
+			z1.put(a.getIzena(), a);
+		}else{
+			System.out.println(a.getIzena()+" aktorea badago zerrendan!!");
+		}
+		
+	}
 	
 	
 }

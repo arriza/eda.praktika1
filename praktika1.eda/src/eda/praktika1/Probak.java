@@ -8,7 +8,8 @@ import java.util.Scanner;
 public class Probak {
 
 	public static void main(String[] args) {
-		String nomF = "C:\\Users\\Leire\\Desktop\\fitx1.txt";
+		//String nomF = "C:\\Users\\Leire\\Desktop\\fitx1.txt";
+		String nomF = "fitxategiak/fitx1.txt";
 		String [] peli = null;
 		String [] aktore = null;
 		Pelikula p = null;
