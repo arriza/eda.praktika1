@@ -20,7 +20,12 @@ public class MainP {
 		//AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(a1Izena);
 		
 
-		AktoreZerrenda.getAktoreZerrenda().imprimatuZerrenda();
+		//aktore baten pelikula zerrenda lortu
+		a1Izena = "Britt, Eva";
+		AktoreZerrenda.getAktoreZerrenda().pelikulakImprimatu(a1Izena);
+		
+		//aktore zerrenda osoa inprimatu
+		//AktoreZerrenda.getAktoreZerrenda().imprimatuZerrenda();
 	}
 
 }

@@ -56,6 +56,7 @@ public class AktoreZerrenda {
 		}
 		
 	}
+	//aktoreen zerrenda inprimatu
 	public void imprimatuZerrenda(){
 		Iterator it = z1.entrySet().iterator();
 		System.out.println("Aktoreen Zerrenda:");
@@ -63,6 +64,15 @@ public class AktoreZerrenda {
 		while (it.hasNext()) {
 		    Map.Entry a = (Map.Entry)it.next();
 		    System.out.println(a.getKey());
+		}
+	}
+	//aktore baten pelikula zerrenda pantailaratuko du
+	public void pelikulakImprimatu(String izenOsoa){
+		Aktorea a1 = z1.get(izenOsoa);
+		if(a1 == null){
+			System.out.println("Ez dago aktore hori!!");
+		}else{
+			a1.pelikulakInprimatu();
 		}
 	}
 	

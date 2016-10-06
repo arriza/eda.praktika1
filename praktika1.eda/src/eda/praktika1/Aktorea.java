@@ -47,7 +47,7 @@ public class Aktorea {
 			return this.listaPelikulak.size();
 		}
 		
-	/*	public int compareTo(Aktorea akt) {
+		public int compareTo(Aktorea akt) {
 			return this.izenOsoa.compareTo(akt.izenOsoa);
 		}
 
@@ -74,5 +74,5 @@ public class Aktorea {
 			} else if (!izenOsoa.equals(other.izenOsoa))
 				return false;
 			return true;
-		}*/
+		}
 }
