@@ -36,9 +36,9 @@ public class Probak {
 				System.out.println(aktore[i]);
 				a = new Aktorea(aktore[i]);
 				a.gehituPelikula(p);
-				if(!AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(aktore[i])){
+				//if(!AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(aktore[i])){
 					AktoreZerrenda.getAktoreZerrenda().gehituAktorea(a);
-				}
+				//}
 			}
 			System.out.println("============================================");
 			

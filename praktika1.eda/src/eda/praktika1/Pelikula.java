@@ -27,9 +27,13 @@ public class Pelikula {
 		//Metodoak
 		
 		public void gehituAktorea(Aktorea akt) {
-			this.listaAktoreak.add(akt);
+			if(!badagoAktorea(akt)){
+				this.listaAktoreak.add(akt);
+			}
 		}
-		
+		public boolean badagoAktorea(Aktorea a){
+			return this.listaAktoreak.contains(a);
+		}
 		public int compareTo(Pelikula peli) {
 			return this.izenburua.compareTo(peli.izenburua);
 		}

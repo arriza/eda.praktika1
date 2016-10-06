@@ -9,6 +9,8 @@ public class PelikulaZerrenda {
 	
 	private static PelikulaZerrenda nirePelikulaZerrenda= new PelikulaZerrenda();
 	
+
+	
 	private PelikulaZerrenda() {
 		zerrenda=new ArrayList<Aktorea>();
 	}	
@@ -29,5 +31,13 @@ public class PelikulaZerrenda {
 	
 	public Iterator<Aktorea> getIteradorea(){
 		return zerrenda.iterator();
+	}
+	public void imprimatuZerrenda(){
+		// Recorremos el hashMap y mostramos por pantalla el par valor y clave
+		/*Iterator it = datos.entrySet().iterator();
+		while (it.hasNext()) {
+		    Map.Entry e = (Map.Entry)it.next();
+		    System.out.println(e.getKey() + " " + e.getValue());*/
+		
 	}
 }
