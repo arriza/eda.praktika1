@@ -56,6 +56,16 @@ public class AktoreZerrenda {
 		}
 		
 	}
+	//aktore baten ezabaketa
+	public void ezabatuAktorea(String izenOsoa){
+		if(AktoreZerrenda.getAktoreZerrenda().zerrendanDago(izenOsoa)){
+			AktoreZerrenda.getAktoreZerrenda().z1.remove(izenOsoa);
+			System.out.println(izenOsoa+" aktorea ezabatu da.");
+		}else{
+			System.out.println("Ezin da "+izenOsoa+" ezabatu, zerrendan ez dagoelako");
+		}
+		
+	}
 	//aktoreen zerrenda inprimatu
 	public void imprimatuZerrenda(){
 		Iterator it = z1.entrySet().iterator();

@@ -30,10 +30,20 @@ public class MainP {
 		//Pelikula bateko aktoreak bueltatu
 		//Pantailan agertuko dira formatu honekin --> Abizena, Izena
 		String izenburua = "Eager to Die";
-		PelikulaZerrenda.getPelikulaZerrenda().aktoreakimprimatu(izenburua);
+		//PelikulaZerrenda.getPelikulaZerrenda().aktoreakimprimatu(izenburua);
 		
 		//pelikula zerrenda osoa imprimatuko du
 		//PelikulaZerrenda.getPelikulaZerrenda().imprimatuZerrenda();
+		
+		//zerrendatik aktore bat ezabatu
+		//aktorea ez dago zerrendan
+		String iz ="Ez, Dago";
+		AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
+		
+		//aktorea badago zerrendan
+		iz= "Britt, Eva";
+		AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
+		AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(iz);
 	}
 
 }
