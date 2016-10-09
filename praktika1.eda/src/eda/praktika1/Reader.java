@@ -32,7 +32,7 @@ public class Reader {
 				 linea = entrada.nextLine();
 				 peli = reader.readLine().split("\\s--->\\s");
 				// peli = linea.split("\\s--->\\s");
-				 //System.out.println("Pelikula izenburua: "+peli[0]);
+				 System.out.println("Pelikula izenburua: "+peli[0]);
 			//sortu pelikula objektua
 			p = new Pelikula(peli[0]);
 			//pelikula pelikulen katalogora gehitu

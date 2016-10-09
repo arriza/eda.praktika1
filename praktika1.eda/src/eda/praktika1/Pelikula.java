@@ -51,7 +51,11 @@ public class Pelikula {
 		{
 			return this.listaAktoreak;
 		}
-		
+		public void imprimatuAktoreak(){
+			for(int i = 0; i<this.getListaAktoreak().size(); i++){
+				System.out.println(this.getListaAktoreak().get(i).getIzena());
+			}
+		}
 		@Override
 		public int hashCode() {
 			final int prime = 31;

@@ -22,10 +22,18 @@ public class MainP {
 
 		//aktore baten pelikula zerrenda lortu
 		a1Izena = "Britt, Eva";
-		AktoreZerrenda.getAktoreZerrenda().pelikulakImprimatu(a1Izena);
+		//AktoreZerrenda.getAktoreZerrenda().pelikulakImprimatu(a1Izena);
 		
 		//aktore zerrenda osoa inprimatu
 		//AktoreZerrenda.getAktoreZerrenda().imprimatuZerrenda();
+		
+		//Pelikula bateko aktoreak bueltatu
+		//Pantailan agertuko dira formatu honekin --> Abizena, Izena
+		String izenburua = "Eager to Die";
+		PelikulaZerrenda.getPelikulaZerrenda().aktoreakimprimatu(izenburua);
+		
+		//pelikula zerrenda osoa imprimatuko du
+		//PelikulaZerrenda.getPelikulaZerrenda().imprimatuZerrenda();
 	}
 
 }
