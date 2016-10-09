@@ -1,10 +1,18 @@
 package eda.praktika1;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
 public class AktoreZerrenda {
 	
@@ -87,6 +95,23 @@ public class AktoreZerrenda {
 		}
 	}
 	
-	
+	//aktoreen zerrenda ordenatua lortu (abizenak, izena)
+	public void zerrendaOrdenatua(){
+		List<Map.Entry<String, Aktorea>> l = new LinkedList<Map.Entry<String, Aktorea>>(z1.entrySet());
+		Collections.sort(l, new Comparator<Map.Entry<String, Aktorea>>() {
+			public int compare(Map.Entry<String, Aktorea> o1, Map.Entry<String, Aktorea> o2){
+				return o1.getValue().compareTo(o2.getValue());
+			}
+		});
+		Map<String, Aktorea> sortMap = new LinkedHashMap<String, Aktorea>();
+		for(Map.Entry<String, Aktorea> a: l){
+			sortMap.put(a.getKey(), a.getValue());
+		}
+		for(Map.Entry<String, Aktorea> ord: sortMap.entrySet()){
+			System.out.println(ord.getValue().getIzena());
+		}
+			
+		
+	}
 	
 }

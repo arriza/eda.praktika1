@@ -46,10 +46,10 @@ public class MainP {
 		//AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(iz);
 		
 		//aktoreen zerrenda fitxategi batean gorde
-		Writer.getWriter().idatziAktoreenFitx();
+		//Writer.getWriter().idatziAktoreenFitx();
 		
 		//aktoreen zerrenda ordenatua lortu --> Abizena, Izena
-		
+		AktoreZerrenda.getAktoreZerrenda().zerrendaOrdenatua();
 	}
 
 }
