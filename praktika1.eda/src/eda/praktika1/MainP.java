@@ -38,12 +38,15 @@ public class MainP {
 		//zerrendatik aktore bat ezabatu
 		//aktorea ez dago zerrendan
 		String iz ="Ez, Dago";
-		AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
+		//AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
 		
 		//aktorea badago zerrendan
 		iz= "Britt, Eva";
-		AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
-		AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(iz);
+		//AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
+		//AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(iz);
+		
+		//aktoreen zerrenda fitxategi batean gorde
+		Writer.getWriter().idatziAktoreenFitx();
 	}
 
 }

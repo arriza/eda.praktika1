@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 public class AktoreZerrenda {
 	
@@ -27,8 +28,8 @@ public class AktoreZerrenda {
 	public int tamaina() {
 		return zerrenda.size();
 	}
-	public Iterator<Aktorea> getIteradorea(){
-		return zerrenda.iterator();
+	public Iterator<Entry<String, Aktorea>> getIteradorea(){
+		return z1.entrySet().iterator();
 	}
 	//HashMap egitura
 	public int sizeHM(){
