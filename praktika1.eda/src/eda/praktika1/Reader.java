@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Reader {
 	private static Reader mReader = null;
-	private String path;
+	//private String path;
 	private Reader(){}
 	public static synchronized Reader getReader(){
 		if(mReader == null){
