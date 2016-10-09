@@ -30,7 +30,7 @@ public class Reader {
 			 while (entrada.hasNext()) {
 			// lerroko pelikularen izenburua lortu
 				 linea = entrada.nextLine();
-				 peli = reader.readLine().split("\\s--->");
+				 peli = reader.readLine().split("\\s--->\\s");
 				// peli = linea.split("\\s--->\\s");
 				 //System.out.println("Pelikula izenburua: "+peli[0]);
 			//sortu pelikula objektua
@@ -38,7 +38,7 @@ public class Reader {
 			//pelikula pelikulen katalogora gehitu
 			PelikulaZerrenda.getPelikulaZerrenda().gehituPelikula(p);
 			//System.out.println("Pelikula horren aktoreak:");
-			aktore = peli[1].split("\\s&&&");
+			aktore = peli[1].split("\\s&&&\\s");
 			for(int i = 0; i<aktore.length;i++){
 				//System.out.println(aktore[i]);
 				a = new Aktorea(aktore[i]);
@@ -56,6 +56,6 @@ public class Reader {
 			 }
 			 catch(IOException e) {e.printStackTrace();}
 
-		
+		//AktoreZerrenda.getAktoreZerrenda().imprimatuZerrenda();
 	}
 }
