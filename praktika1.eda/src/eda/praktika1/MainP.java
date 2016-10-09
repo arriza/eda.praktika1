@@ -47,6 +47,9 @@ public class MainP {
 		
 		//aktoreen zerrenda fitxategi batean gorde
 		Writer.getWriter().idatziAktoreenFitx();
+		
+		//aktoreen zerrenda ordenatua lortu --> Abizena, Izena
+		
 	}
 
 }
