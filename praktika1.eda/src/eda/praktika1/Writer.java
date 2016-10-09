@@ -1,13 +1,9 @@
 package eda.praktika1;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;
-
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 
 public class Writer {
 	private static Writer mWriter=null;
@@ -39,18 +35,5 @@ public class Writer {
 		}
 		
 	}
-	/*
-	 * // parent component of the dialog
-JFrame parentFrame = new JFrame();
- 
-JFileChooser fileChooser = new JFileChooser();
-fileChooser.setDialogTitle("Specify a file to save");   
- 
-int userSelection = fileChooser.showSaveDialog(parentFrame);
- 
-if (userSelection == JFileChooser.APPROVE_OPTION) {
-    File fileToSave = fileChooser.getSelectedFile();
-    System.out.println("Save as file: " + fileToSave.getAbsolutePath());
-}
-	 */
+	
 }
