@@ -4,18 +4,22 @@ import java.util.Scanner;
 
 public class MainP {
 
+	private static Stopwatch timer;
 	public static void main(String[] args) {
 		//datuak kargatu fitxategitik
 		//fitxategia proiektuaren barruan dago, baina irakurtzeko klase bat erabiliko da
+		timer = new Stopwatch();
 		System.out.println("Datuak kargatzen...");
 		String nomF = "fitxategiak/fitx1.txt";
 		Reader.getReader().zerrendaKargatu(nomF);
-		System.out.println("Datuak kargatuta! :)");
+		System.out.println("Datuak kargatuta! :), emandako denbora --> "+timer.elapsedTime());
 		
 		//menu bat, apikazioak dauzkan aukera guztiak proban jartzeko
 		paintMenu();
 		
-		
+		/*
+		 * Probak *
+		 */
 		/*Aktoreen zerrendan aktore baten bilaketa, izena eta abizena erabilita
 		IzenAbizen formatua --> Abizena, Izena
 		
@@ -123,11 +127,14 @@ public class MainP {
 		}
 	}
 	private static void badagoZerrendan(){
+		
 		String aIzena= "";
 		System.out.println("Sartu aktorearen Abizen, Izena");
 		Scanner sc = new Scanner(System.in);
 		aIzena = sc.nextLine();
+		timer = new Stopwatch();
 		AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(aIzena);
+		System.out.println(aIzena+" aktorearen bilaketan emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void gehituAktorea(){
 		String aIzena= "";
@@ -135,7 +142,9 @@ public class MainP {
 		Scanner sc = new Scanner(System.in);
 		aIzena = sc.nextLine();
 		Aktorea a = new Aktorea(aIzena);
-		AktoreZerrenda.getAktoreZerrenda().gehituAktorea(a);;
+		timer = new Stopwatch();
+		AktoreZerrenda.getAktoreZerrenda().gehituAktorea(a);
+		System.out.println(aIzena+" gehitzeko emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void aktorePelikulak(){
 		String aIzena= "";
@@ -149,19 +158,27 @@ public class MainP {
 		System.out.println("Sartu pelikularen izenburua");
 		Scanner sc = new Scanner(System.in);
 		pIzena = sc.nextLine();
+		timer = new Stopwatch();
 		PelikulaZerrenda.getPelikulaZerrenda().aktoreakimprimatu(pIzena);
+		System.out.println(pIzena+" pelikularen aktoreak inprimatzeko emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void ezabatuAktorea(){
 		String aIzena= "";
 		System.out.println("Sartu aktorearen Abizen, Izena");
 		Scanner sc = new Scanner(System.in);
 		aIzena = sc.nextLine();
+		timer = new Stopwatch();
 		AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(aIzena);
+		System.out.println(aIzena+" ezabatzeko emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void idatziFitxategia(){
+		timer = new Stopwatch();
 		Writer.getWriter().idatziAktoreenFitx();
+		System.out.println("Fitxategia idazteko emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void zerrendaOrdenatua(){
-		AktoreZerrenda.getAktoreZerrenda().zerrendaOrdenatua();;
+		timer = new Stopwatch();
+		AktoreZerrenda.getAktoreZerrenda().zerrendaOrdenatua();
+		System.out.println("Aktoreen zerrenda ordenatzeko emandako denbora --> "+timer.elapsedTime());
 	}
 }
