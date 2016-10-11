@@ -15,54 +15,46 @@ public class MainP {
 		//menu bat, apikazioak dauzkan aukera guztiak proban jartzeko
 		paintMenu();
 		
-		//erabiltzaileak hartutako erabakia hartu
-		//aukeraHartu();
+		
+		/*Aktoreen zerrendan aktore baten bilaketa, izena eta abizena erabilita
+		IzenAbizen formatua --> Abizena, Izena
+		
+		Proba kasu 1: Aktorea zerrendan dago
+		Hudson, Annette;
 		
 		
-		//erabiltzailearen aukera hartu
+		Proba kasu 2: Aktorea ez dago zerrendan
+		Perez, Pepita;
+		*/
 		
-		//Aktoreen zerrendan aktore baten bilaketa, izena eta abizena erabilita
-		//IzenAbizen formatua --> Abizena, Izena
 		
-		//Proba kasu 1: Aktorea zerrendan dago
-		String a1Izena = "Hudson, Annette";
-		//AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(a1Izena);
+		/*aktore baten pelikula zerrenda lortu
+		Britt, Eva*/
 		
-		//Proba kasu 2: Aktorea ez dago zerrendan
-		a1Izena = "Perez, Pepita";
-		//AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(a1Izena);
+		/*aktore zerrenda osoa inprimatu*/
 		
-
-		//aktore baten pelikula zerrenda lortu
-		a1Izena = "Britt, Eva";
-		//AktoreZerrenda.getAktoreZerrenda().pelikulakImprimatu(a1Izena);
+		/*Pelikula bateko aktoreak bueltatu
+		Pantailan agertuko dira formatu honekin --> Abizena, Izena
+		Eager to Die
+		*/
 		
-		//aktore zerrenda osoa inprimatu
-		//AktoreZerrenda.getAktoreZerrenda().imprimatuZerrenda();
+		/*pelikula zerrenda osoa imprimatu
+		*/
 		
-		//Pelikula bateko aktoreak bueltatu
-		//Pantailan agertuko dira formatu honekin --> Abizena, Izena
-		String izenburua = "Eager to Die";
-		//PelikulaZerrenda.getPelikulaZerrenda().aktoreakimprimatu(izenburua);
+		/*zerrendatik aktore bat ezabatu
+		Proba kasu 1: aktorea ez dago zerrendan
+		Ez, Dago
 		
-		//pelikula zerrenda osoa imprimatuko du
-		//PelikulaZerrenda.getPelikulaZerrenda().imprimatuZerrenda();
+		Proba kasu 2: aktorea badago zerrendan
+		Britt, Eva
+		*/
 		
-		//zerrendatik aktore bat ezabatu
-		//aktorea ez dago zerrendan
-		String iz ="Ez, Dago";
-		//AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
+		/*aktoreen zerrenda fitxategi batean gorde
+		 * */
+		 
 		
-		//aktorea badago zerrendan
-		iz= "Britt, Eva";
-		//AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(iz);
-		//AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(iz);
-		
-		//aktoreen zerrenda fitxategi batean gorde
-		//Writer.getWriter().idatziAktoreenFitx();
-		
-		//aktoreen zerrenda ordenatua lortu --> Abizena, Izena
-		//AktoreZerrenda.getAktoreZerrenda().zerrendaOrdenatua();
+		/*aktoreen zerrenda ordenatua lortu --> Abizena, Izena
+		*/
 		
 		
 	}
