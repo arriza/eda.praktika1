@@ -66,7 +66,15 @@ public class PelikulaZerrenda {
 	//pelikula batek dituen aktoreen zerrenda imprimatuko du
 	public void aktoreakimprimatu(String izenburua){
 		Pelikula p = null;
-		p = PelikulaZerrenda.getPelikulaZerrenda().z1.get(izenburua);
-		p.imprimatuAktoreak();
+		if(PelikulaZerrenda.getPelikulaZerrenda().zerrendanDago(izenburua)){
+			p = PelikulaZerrenda.getPelikulaZerrenda().z1.get(izenburua);
+			p.imprimatuAktoreak();
+		}else{
+			System.out.println("Ez da aurkitu zerrendan!!");
+		}
+	}
+	public void hasieratu() {
+		z1 = null;
+		nirePelikulaZerrenda = null;
 	}
 }

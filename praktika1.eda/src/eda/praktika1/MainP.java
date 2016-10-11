@@ -6,6 +6,7 @@ public class MainP {
 
 	private static Stopwatch timer;
 	public static void main(String[] args) {
+		hasieratuZerrendak();
 		//datuak kargatu fitxategitik
 		//fitxategia proiektuaren barruan dago, baina irakurtzeko klase bat erabiliko da
 		timer = new Stopwatch();
@@ -151,7 +152,9 @@ public class MainP {
 		System.out.println("Sartu aktorearen Abizen, Izena");
 		Scanner sc = new Scanner(System.in);
 		aIzena = sc.nextLine();
+		timer = new Stopwatch();
 		AktoreZerrenda.getAktoreZerrenda().pelikulakImprimatu(aIzena);
+		System.out.println(aIzena+" aktorearen pelikulak inprimatzen emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void pelikulaAktoreak(){
 		String pIzena= "";
@@ -180,5 +183,9 @@ public class MainP {
 		timer = new Stopwatch();
 		AktoreZerrenda.getAktoreZerrenda().zerrendaOrdenatua();
 		System.out.println("Aktoreen zerrenda ordenatzeko emandako denbora --> "+timer.elapsedTime());
+	}
+	private static void hasieratuZerrendak(){
+		AktoreZerrenda.getAktoreZerrenda().hasieratu();
+		PelikulaZerrenda.getPelikulaZerrenda().hasieratu();
 	}
 }

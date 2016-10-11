@@ -113,5 +113,12 @@ public class AktoreZerrenda {
 			
 		
 	}
+	public void hasieratu() {
+		z1 = null;
+		nireAktoreZerrenda = null;
+	}
+	public void gehitu(Pelikula p, String izenOsoa){
+		AktoreZerrenda.getAktoreZerrenda().z1.get(izenOsoa).gehituPelikula(p);
+	}
 	
 }

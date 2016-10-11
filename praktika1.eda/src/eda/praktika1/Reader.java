@@ -43,10 +43,13 @@ public class Reader {
 				//System.out.println(aktore[i]);
 				a = new Aktorea(aktore[i]);
 				p.gehituAktorea(a);
-				a.gehituPelikula(p);
-				//if(!AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(aktore[i])){
+				
+				if(!AktoreZerrenda.getAktoreZerrenda().zerrendanDago(aktore[i])){
+					a.gehituPelikula(p);
 					AktoreZerrenda.getAktoreZerrenda().gehituAktorea(a);
-				//}
+				}else{
+					AktoreZerrenda.getAktoreZerrenda().gehitu(p, aktore[i]);
+				}
 			}
 			//System.out.println("============================================");
 			
