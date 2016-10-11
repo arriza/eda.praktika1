@@ -10,7 +10,7 @@ public class MainP {
 		//fitxategia proiektuaren barruan dago, baina irakurtzeko klase bat erabiliko da
 		timer = new Stopwatch();
 		System.out.println("Datuak kargatzen...");
-		String nomF = "fitxategiak/fitx1.txt";
+		String nomF = "fitxategiak/lista.txt";
 		Reader.getReader().zerrendaKargatu(nomF);
 		System.out.println("Datuak kargatuta! :), emandako denbora --> "+timer.elapsedTime());
 		
