@@ -1,6 +1,6 @@
 package eda.praktika1;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -53,6 +53,7 @@ public class PelikulaZerrenda {
 			System.out.println(izenburua+" ez da aurkitu zerrendan... :(");		}
 	}
 	//pelikula zerrenda imprimatu
+	@SuppressWarnings("rawtypes")
 	public void imprimatuZerrenda(){
 		Iterator it = z1.entrySet().iterator();
 		System.out.println("Pelikula Zerrenda:");

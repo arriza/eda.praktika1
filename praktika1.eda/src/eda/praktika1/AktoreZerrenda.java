@@ -1,7 +1,6 @@
 package eda.praktika1;
 
-import java.util.ArrayList;
-import java.util.Collection;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -11,17 +10,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 public class AktoreZerrenda {
 	
-	private ArrayList<Aktorea> zerrenda;
+	
 	private Map<String,Aktorea> z1;
 	private static AktoreZerrenda nireAktoreZerrenda= new AktoreZerrenda();
 	
 	private AktoreZerrenda() {
-		zerrenda=new ArrayList<Aktorea>();
+		
 		z1 = new HashMap<String, Aktorea>();
 	}	
 
@@ -32,10 +29,7 @@ public class AktoreZerrenda {
 		}
 		return AktoreZerrenda.nireAktoreZerrenda;
 	}
-	//ArrayList egitura
-	public int tamaina() {
-		return zerrenda.size();
-	}
+	
 	public Iterator<Entry<String, Aktorea>> getIteradorea(){
 		return z1.entrySet().iterator();
 	}
@@ -76,6 +70,7 @@ public class AktoreZerrenda {
 		
 	}
 	//aktoreen zerrenda inprimatu
+	@SuppressWarnings("rawtypes")
 	public void imprimatuZerrenda(){
 		Iterator it = z1.entrySet().iterator();
 		System.out.println("Aktoreen Zerrenda:");
