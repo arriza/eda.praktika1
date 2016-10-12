@@ -56,6 +56,7 @@ public class PelikulaZerrendaTest {
 	
 	@Test 
 	public void testHasieratu(){
+		
 		PelikulaZerrenda.getPelikulaZerrenda().gehituPelikula(peli1);
 		PelikulaZerrenda.getPelikulaZerrenda().gehituPelikula(peli2);
 		PelikulaZerrenda.getPelikulaZerrenda().gehituPelikula(peli3);
