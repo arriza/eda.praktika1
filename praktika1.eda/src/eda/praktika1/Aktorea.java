@@ -37,6 +37,11 @@ public class Aktorea {
 		//Metodoak
 		
 		public void pelikulakInprimatu() {
+			/*
+			 * Aurre:Datu egitura ez dago hutsik
+			 * Post: aktorearen pelikulak pantailaratu
+			 * 
+			 */
 			int i;
 			for (i=0;i==this.listaPelikulak.size()-1;i++) {
 				System.out.println(this.listaPelikulak.get(i).getIzenburua());

@@ -45,13 +45,22 @@ public class AktoreZerrenda {
 		}
 		
 	}
+	
 	public boolean zerrendanDago(String izenOsoa){
-		
-		//Aktorea a1 = new Aktorea(izenOsoa);
+		/*
+		 * Aurre: Datu egitura ez dago hutsik
+		 * Post: emaitza true izango da aktorea egon ezkero, false ez badago
+		 */
 		return z1.containsKey(izenOsoa);
 	}
 	public void gehituAktorea(Aktorea a){
 		//konprobatu aktorea zerrendan dagoen jada
+		/*
+		 * Aurre:Datu egitura ez dago hutsik
+		 * Post: aktorea gehituko du zerrendan ez badago, egotekotan
+		 * 		mezu bat pantailaratuko du eta ez du gehituko 
+		 * 
+		 */
 		if(!AktoreZerrenda.getAktoreZerrenda().zerrendanDago(a.getIzena())){
 			z1.put(a.getIzena(), a);
 		}else{
@@ -61,6 +70,11 @@ public class AktoreZerrenda {
 	}
 	//aktore baten ezabaketa
 	public void ezabatuAktorea(String izenOsoa){
+		/*
+		 * Aurre:Datu egitura ez dago hutsik
+		 * Post: aktorearen ezabatuko du zerrendan badago
+		 * 		ez badago, mezu bat pantailaratuko da
+		 */
 		if(AktoreZerrenda.getAktoreZerrenda().zerrendanDago(izenOsoa)){
 			AktoreZerrenda.getAktoreZerrenda().z1.remove(izenOsoa);
 			System.out.println(izenOsoa+" aktorea ezabatu da.");
@@ -82,6 +96,13 @@ public class AktoreZerrenda {
 	}
 	//aktore baten pelikula zerrenda pantailaratuko du
 	public void pelikulakImprimatu(String izenOsoa){
+		/*
+		 * Aurre:Datu egitura ez dago hutsik
+		 * Post: aktorearen pelikulak pantailaratuko ditu
+		 * 		aktorea egotekotan, ez badago mezu bat 
+		 * 		pantailaratuko du 
+		 * 
+		 */
 		Aktorea a1 = z1.get(izenOsoa);
 		if(a1 == null){
 			System.out.println("Ez dago aktore hori!!");
@@ -92,6 +113,10 @@ public class AktoreZerrenda {
 	
 	//aktoreen zerrenda ordenatua lortu (abizenak, izena)
 	public void zerrendaOrdenatua(){
+		/*
+		 * Aurre:Datu egitura ez dago hutsik
+		 * Post: aktoreen zerrenda ordenatua pantailaratu
+		 */
 		List<Map.Entry<String, Aktorea>> l = new LinkedList<Map.Entry<String, Aktorea>>(z1.entrySet());
 		Collections.sort(l, new Comparator<Map.Entry<String, Aktorea>>() {
 			public int compare(Map.Entry<String, Aktorea> o1, Map.Entry<String, Aktorea> o2){
