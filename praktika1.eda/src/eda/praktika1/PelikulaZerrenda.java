@@ -1,6 +1,4 @@
 package eda.praktika1;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -10,7 +8,6 @@ public class PelikulaZerrenda {
 	//private ArrayList<Aktorea> zerrenda;
 	
 	private static PelikulaZerrenda nirePelikulaZerrenda= null;
-	
 	private Map<String,Pelikula> z1;
 	
 	private PelikulaZerrenda() {
@@ -41,10 +38,7 @@ public class PelikulaZerrenda {
 	public boolean zerrendanDago(String izenburua){
 		return PelikulaZerrenda.getPelikulaZerrenda().z1.containsKey(izenburua);
 	}
-	
-	/*public Iterator<Aktorea> getIteradorea(){
-		return zerrenda.iterator();
-	}*/
+
 	//pelikula baten bilaketa
 	public void badagoZerrendan(String izenburua){
 		if(!PelikulaZerrenda.getPelikulaZerrenda().zerrendanDago(izenburua)){
@@ -53,6 +47,7 @@ public class PelikulaZerrenda {
 			System.out.println(izenburua+" ez da aurkitu zerrendan... :(");		}
 	}
 	//pelikula zerrenda imprimatu
+	@SuppressWarnings("rawtypes")
 	public void imprimatuZerrenda(){
 		Iterator it = z1.entrySet().iterator();
 		System.out.println("Pelikula Zerrenda:");

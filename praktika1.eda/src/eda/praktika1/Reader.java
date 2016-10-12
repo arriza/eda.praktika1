@@ -16,6 +16,7 @@ public class Reader {
 	}
 	
 	//fitxategitik datuak atera
+	@SuppressWarnings({ "resource", "unused" })
 	public void zerrendaKargatu(String nomF){
 		String [] peli = null;
 		String [] aktore = null;

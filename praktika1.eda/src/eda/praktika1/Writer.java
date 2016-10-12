@@ -19,6 +19,10 @@ public class Writer {
 	//aktoreen zerrenda fitxategi batean gorde
 	@SuppressWarnings("rawtypes")
 	public void idatziAktoreenFitx(){
+		/*
+		 * Aurre:Datu egitura ez dago hutsik
+		 * Post: aktoreen zerrenda fitategian gordeta
+		 */
 		Iterator it = AktoreZerrenda.getAktoreZerrenda().getIteradorea();
 		try {
 			file = new FileWriter("fitxategiak/AktoreZerrenda.txt");

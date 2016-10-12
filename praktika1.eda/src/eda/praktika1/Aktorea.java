@@ -13,18 +13,9 @@ public class Aktorea {
 			this.izenOsoa=izenOsoa;
 		}
 		
-		//Getters & Setters
-
-		
 		public String getIzena() {
 			return izenOsoa;
 		}
-
-		public void setIzena(String izenOsoa) {
-			this.izenOsoa = izenOsoa;
-		}
-
-
 		public ArrayList<Pelikula> getPelikulaLista() {
 			return this.listaPelikulak;
 
@@ -34,9 +25,13 @@ public class Aktorea {
 			this.listaPelikulak.add(peli);
 		}
 		
-		//Metodoak
 		
 		public void pelikulakInprimatu() {
+			/*
+			 * Aurre:Datu egitura ez dago hutsik
+			 * Post: aktorearen pelikulak pantailaratu
+			 * 
+			 */
 			int i;
 			for (i=0;i==this.listaPelikulak.size()-1;i++) {
 				System.out.println(this.listaPelikulak.get(i).getIzenburua());

@@ -63,6 +63,7 @@ public class MainP {
 		
 		
 	}
+	@SuppressWarnings("resource")
 	private static void paintMenu(){
 		//String aukera="";
 		int select = 0;
@@ -127,6 +128,7 @@ public class MainP {
 			break;
 		}
 	}
+	@SuppressWarnings("resource")
 	private static void badagoZerrendan(){
 		
 		String aIzena= "";
@@ -137,6 +139,7 @@ public class MainP {
 		AktoreZerrenda.getAktoreZerrenda().badagoZerrendan(aIzena);
 		System.out.println(aIzena+" aktorearen bilaketan emandako denbora --> "+timer.elapsedTime());
 	}
+	@SuppressWarnings("resource")
 	private static void gehituAktorea(){
 		String aIzena= "";
 		System.out.println("Sartu aktorearen Abizen, Izena");
@@ -147,6 +150,7 @@ public class MainP {
 		AktoreZerrenda.getAktoreZerrenda().gehituAktorea(a);
 		System.out.println(aIzena+" gehitzeko emandako denbora --> "+timer.elapsedTime());
 	}
+	@SuppressWarnings("resource")
 	private static void aktorePelikulak(){
 		String aIzena= "";
 		System.out.println("Sartu aktorearen Abizen, Izena");
@@ -156,6 +160,7 @@ public class MainP {
 		AktoreZerrenda.getAktoreZerrenda().pelikulakImprimatu(aIzena);
 		System.out.println(aIzena+" aktorearen pelikulak inprimatzen emandako denbora --> "+timer.elapsedTime());
 	}
+	@SuppressWarnings("resource")
 	private static void pelikulaAktoreak(){
 		String pIzena= "";
 		System.out.println("Sartu pelikularen izenburua");
@@ -165,6 +170,7 @@ public class MainP {
 		PelikulaZerrenda.getPelikulaZerrenda().aktoreakimprimatu(pIzena);
 		System.out.println(pIzena+" pelikularen aktoreak inprimatzeko emandako denbora --> "+timer.elapsedTime());
 	}
+	@SuppressWarnings("resource")
 	private static void ezabatuAktorea(){
 		String aIzena= "";
 		System.out.println("Sartu aktorearen Abizen, Izena");
