@@ -6,26 +6,15 @@ public class Pelikula {
 	//Atributuak
 	
 		private String izenburua;
-		private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>(); 
-		
-		//Eraikitzailea
+		private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>();
 		
 		public Pelikula(String izenburua){
 			this.izenburua=izenburua;
 		}
 		
-		//Getters & Setters
-
 		public String getIzenburua() {
 			return this.izenburua;
 		}
-
-		public void setIzenburua(String izenburua) {
-			this.izenburua = izenburua;
-		}
-		
-		//Metodoak
-		
 		public void gehituAktorea(Aktorea akt) {
 			if(!badagoAktorea(akt)){
 				this.listaAktoreak.add(akt);
