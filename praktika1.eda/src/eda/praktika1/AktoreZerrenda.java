@@ -45,7 +45,6 @@ public class AktoreZerrenda {
 		}
 		
 	}
-	
 	public boolean zerrendanDago(String izenOsoa){
 		/*
 		 * Aurre: Datu egitura ez dago hutsik
@@ -111,7 +110,6 @@ public class AktoreZerrenda {
 		}
 	}
 	
-	//aktoreen zerrenda ordenatua lortu (abizenak, izena)
 	public void zerrendaOrdenatua(){
 		/*
 		 * Aurre:Datu egitura ez dago hutsik
