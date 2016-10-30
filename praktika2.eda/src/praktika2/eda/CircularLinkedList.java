@@ -24,28 +24,72 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	  return deskr;
 	}
 
+	/**
+	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da
+	 */
 	public T removeFirst() {
 	// listako lehen elementua kendu da
 	// Aurrebaldintza: zerrenda ez da hutsa
-		// KODEA OSATU ETA KOSTUA KALKULATU
+		T firstNode = last.next.data;
+		last.next = last.next.next;
+		count --;
+		//listako lehen elementua bueltatzen du
+		return(firstNode);
 		
 	}
 
+	/**
+	 * Kostua konstantea O(n)izango da zerrenda osoa zeharkatu behar delako
+	 * n=zerrendan dauden elementu kopurua izanda
+	 * esleipenenen kostua kte. da
+	 */
 	public T removeLast() {
 	// listako azken elementua kendu da
 	// Aurrebaldintza: zerrenda ez da hutsa
-		// KODEA OSATU ETA KOSTUA KALKULATU
+		T lastNode = last.data;
+		Node<T> current = last;
+		//last -en aurreko nodoa aurkitu beharra dago
+		while(current.next != last){
+			current = current.next;
+		}
+		current.next = last.next;
+		last = current;
+		count --;
+		return(lastNode);
+		
     }
 
-
+	/**
+	 * Kostua konstantea O(n)izango da zerrenda zeharkatu behar delako, kasurik txarrenean zerrenda osoa zeharkatuko da
+	 * n=zerrendan dauden elementu kopurua izanda
+	 * esleipenenen kostua kte. da
+	 */
+	@SuppressWarnings("unchecked")
 	public T remove(T elem) {
 	// Aurrebaldintza: zerrenda ez da hutsa
 	// Balio hori listan baldin badago, bere lehen agerpena ezabatuko dut. Kendutako objektuaren erreferentzia 
         //  bueltatuko du (null ez baldin badago)
-
-	
-		// KODEA OSATU ETA KOSTUA KALKULATU
-        };
+		T r = (T)new Object();
+		Node<T> current = last;
+		boolean jarraitu = true;
+		//aurkitu elementua
+		while(jarraitu && current.next != last){
+			if(current.next.data.equals(elem)){
+				r = current.next.data;
+				jarraitu = false;
+			}else{
+				current = current.next;
+			}
+		}
+		//elementua ezabatu
+		if(current.next == last){
+			current.next = last.next;
+			last = current;
+		}else{
+			current.next = current.next.next;
+		}
+		return(r);
+    }
 
 	public T first() {
 	// listako lehen elementua ematen du
@@ -63,13 +107,33 @@ public class CircularLinkedList<T> implements ListADT<T> {
 
 	public boolean contains(T elem) {
 	// Egiazkoa bueltatuko du aurkituz gero, eta false bestela
+		boolean badago = false;
+		Node<T> current = last;
+		while(!badago && current.next != last){
+			if(current.data.equals(elem)){
+				badago = true;
+			}else{
+				current = current.next;
+			}
+		}return(badago);
 	
 		   }
 
+	@SuppressWarnings("unchecked")
 	public T find(T elem) {
 	// Elementua bueltatuko du aurkituz gero, eta null bestela
-
-		// KODEA OSATU ETA KOSTUA KALKULATU
+		T r = (T)new Object();
+		Node<T> current = last;
+		boolean badago = false;
+		while(!badago && current.next != last){
+			if(current.data.equals(elem)){
+				badago = true;
+				r = current.data;
+			}else{
+				current = current.next;
+			}
+		}
+		return(r);
 	}
 
 	public boolean isEmpty() 
