@@ -150,6 +150,8 @@ public class CircularLinkedList<T> implements ListADT<T> {
 
 		// KODEA OSATU 
 	   } // private class
+	   
+	   
 		
 		
 		public void adabegiakInprimatu() {
