@@ -2,11 +2,15 @@ package praktika.akt;
 
 import java.util.ArrayList;
 
+import praktika2.eda.UnorderedCircularLinkedList;
+
 public class Pelikula {
 	//Atributuak
 	
 		private String izenburua;
-		private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>();
+		//private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>();
+		private UnorderedCircularLinkedList<Aktorea> listaAktoreak = new UnorderedCircularLinkedList<Aktorea>();
+		
 		
 		public Pelikula(String izenburua){
 			this.izenburua=izenburua;
@@ -15,10 +19,13 @@ public class Pelikula {
 		public String getIzenburua() {
 			return this.izenburua;
 		}
-		public void gehituAktorea(Aktorea akt) {
+		/*public void gehituAktorea(Aktorea akt) {
 			if(!badagoAktorea(akt)){
 				this.listaAktoreak.add(akt);
 			}
+		}*/
+		public void gehituAktorea(Aktorea akt){
+			if()
 		}
 		public boolean badagoAktorea(Aktorea a){
 			return this.listaAktoreak.contains(a);
