@@ -3,6 +3,7 @@ package praktika2.eda;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+@SuppressWarnings("unused")
 public class CircularLinkedList<T> implements ListADT<T> {
 
 	// Atributuak
@@ -147,8 +148,26 @@ public class CircularLinkedList<T> implements ListADT<T> {
 
 	   // an iterator, doesn't implement remove() since it's optional 
 	   private class ListIterator implements Iterator<T> { 
+		   private Node<T> current;
+		   private ListIterator(){
+			   current = last;
+		   }
+		   public boolean hasNext(){
+			   return current != null;
+		   }
+		   public T next(){
+			   if(hasNext()){
+				   T next = current.data;
+				   current = current.next;
+				   return next;
+			   }
+			   //ez badago elementurik 
+			   throw new java.util.NoSuchElementException("linked list.next");
+		   }
 
-		// KODEA OSATU 
+		   public void remove(){
+			   throw new UnsupportedOperationException("Linked list iterator remove not supported");
+		   }
 	   } // private class
 	   
 	   
