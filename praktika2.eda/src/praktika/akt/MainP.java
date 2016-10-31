@@ -12,7 +12,7 @@ public class MainP {
 		timer = new Stopwatch();
 		System.out.println("Datuak kargatzen...");
 		String nomF = "fitxategiak/lista.txt";
-		Reader.getReader().zerrendaKargatu(nomF);
+		PelikulaZerrenda.getPelikulaZerrenda().zerrendaKargatu(nomF);
 		System.out.println("Datuak kargatuta! :), emandako denbora --> "+timer.elapsedTime());
 		
 		//menu bat, apikazioak dauzkan aukera guztiak proban jartzeko
@@ -182,7 +182,7 @@ public class MainP {
 	}
 	private static void idatziFitxategia(){
 		timer = new Stopwatch();
-		Writer.getWriter().idatziAktoreenFitx();
+		AktoreZerrenda.getAktoreZerrenda().idatziAktoreenFitx();
 		System.out.println("Fitxategia idazteko emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void zerrendaOrdenatua(){

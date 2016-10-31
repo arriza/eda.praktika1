@@ -1,7 +1,11 @@
 package praktika.akt;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Scanner;
 
 public class PelikulaZerrenda {
 	
@@ -72,4 +76,44 @@ public class PelikulaZerrenda {
 		z1 = null;
 		nirePelikulaZerrenda = null;
 	}
+	//fitxategitik datuak atera
+		@SuppressWarnings({ "resource", "unused" })
+		public void zerrendaKargatu(String nomF){
+			String [] peli = null;
+			String [] aktore = null;
+			Pelikula p = null;
+			Aktorea a = null;
+			//String 
+			try{
+				 Scanner entrada = new Scanner(new FileReader(nomF));
+				 FileReader f = new FileReader(nomF);
+				 BufferedReader reader = new BufferedReader(f);
+				 String linea;
+				 while (entrada.hasNext()) {
+				// lerroko pelikularen izenburua lortu
+					 linea = entrada.nextLine();
+					 peli = reader.readLine().split("\\s--->\\s");
+				//sortu pelikula objektua
+				p = new Pelikula(peli[0]);
+				//pelikula pelikulen katalogora gehitu
+				PelikulaZerrenda.getPelikulaZerrenda().gehituPelikula(p);
+				aktore = peli[1].split("\\s&&&\\s");
+				for(int i = 0; i<aktore.length;i++){
+					//System.out.println(aktore[i]);
+					a = new Aktorea(aktore[i]);
+					p.gehituAktorea(a);
+					
+					if(!AktoreZerrenda.getAktoreZerrenda().zerrendanDago(aktore[i])){
+						a.gehituPelikula(p);
+						AktoreZerrenda.getAktoreZerrenda().gehituAktorea(a);
+					}else{
+						AktoreZerrenda.getAktoreZerrenda().gehitu(p, aktore[i]);
+					}
+				}
+				
+				 }
+				 entrada.close();
+				 }
+				 catch(IOException e) {e.printStackTrace();}
+		}
 }
