@@ -67,7 +67,7 @@ public class PelikulaZerrenda {
 		Pelikula p = null;
 		if(PelikulaZerrenda.getPelikulaZerrenda().zerrendanDago(izenburua)){
 			p = PelikulaZerrenda.getPelikulaZerrenda().z1.get(izenburua);
-			p.imprimatuAktoreak();
+			//p.imprimatuAktoreak();
 		}else{
 			System.out.println("Ez da aurkitu zerrendan!!");
 		}

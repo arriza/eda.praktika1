@@ -25,7 +25,11 @@ public class Pelikula {
 			}
 		}*/
 		public void gehituAktorea(Aktorea akt){
-			if()
+			if(!listaAktoreak.contains(akt)){
+				listaAktoreak.addToRear(akt);
+			}else{
+				System.out.println("Aktorea badago listan");
+			}
 		}
 		public boolean badagoAktorea(Aktorea a){
 			return this.listaAktoreak.contains(a);
@@ -38,7 +42,7 @@ public class Pelikula {
 			return this.listaAktoreak.size();
 		}
 		
-		public void kenduAktorea(Aktorea akt)
+		/*public void kenduAktorea(Aktorea akt)
 		{
 			int k=this.listaAktoreak.indexOf(akt);
 			this.listaAktoreak.remove(k);
@@ -51,7 +55,7 @@ public class Pelikula {
 			for(int i = 0; i<this.getListaAktoreak().size(); i++){
 				System.out.println(this.getListaAktoreak().get(i).getIzena());
 			}
-		}
+		}*/
 		@Override
 		public int hashCode() {
 			final int prime = 31;
