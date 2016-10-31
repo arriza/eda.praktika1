@@ -22,6 +22,11 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		
 	}
 	//target elementua listan dagoela suposatu behar da
+	/**
+	 * Kostua konstantea O(n)izango da zerrenda osoa zeharkatu behar delako
+	 * n=zerrendan dauden elementu kopurua izanda
+	 * esleipenenen kostua kte. da
+	 */
 	public void addAfter(T elem, T target) {
 		Node<T> current = last;
 		boolean aurkitu = false;
