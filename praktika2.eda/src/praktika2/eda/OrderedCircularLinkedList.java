@@ -11,8 +11,9 @@ public class OrderedCircularLinkedList<T> extends CircularLinkedList<T> implemen
 			berria.next = berria;
 			last = berria;
 		}else{
+			//lista ez dago hutsik
 			while(jarraitu){
-				if(current.compareTo(elem)<0){
+				if(current.compareTo(elem)<0 && current.next.compareTo(elem)>0){
 					berria.next = current.next;
 					current.next = berria;
 					jarraitu = false;
