@@ -110,11 +110,14 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	// Egiazkoa bueltatuko du aurkituz gero, eta false bestela
 		boolean badago = false;
 		Node<T> current = last;
-		while(!badago && current.next != last){
-			if(current.data.equals(elem)){
-				badago = true;
-			}else{
-				current = current.next;
+		if(last != null){
+		
+			while(!badago && current.next != last){
+				if(current.data.equals(elem)){
+					badago = true;
+				}else{
+					current = current.next;
+				}
 			}
 		}return(badago);
 	

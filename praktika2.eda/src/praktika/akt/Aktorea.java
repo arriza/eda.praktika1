@@ -8,12 +8,13 @@ public class Aktorea {
 	//Atributuak
 		private String izenOsoa;
 		//private ArrayList<Pelikula> listaPelikulak=new ArrayList<Pelikula>();
-		private UnorderedCircularLinkedList<Pelikula> listaPelikulak = new UnorderedCircularLinkedList<Pelikula>();
+		private UnorderedCircularLinkedList<Pelikula> listaPelikulak;
 		
 		//Eraikitzailea
 		
 		public Aktorea (String izenOsoa){
 			this.izenOsoa=izenOsoa;
+			listaPelikulak  = new UnorderedCircularLinkedList<Pelikula>();
 		}
 		
 		public String getIzena() {

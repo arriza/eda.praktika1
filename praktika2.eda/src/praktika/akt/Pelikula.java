@@ -9,11 +9,12 @@ public class Pelikula {
 	
 		private String izenburua;
 		//private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>();
-		private UnorderedCircularLinkedList<Aktorea> listaAktoreak = new UnorderedCircularLinkedList<Aktorea>();
+		private UnorderedCircularLinkedList<Aktorea> listaAktoreak ;
 		
 		
 		public Pelikula(String izenburua){
 			this.izenburua=izenburua;
+			listaAktoreak = new UnorderedCircularLinkedList<Aktorea>();
 		}
 		
 		public String getIzenburua() {

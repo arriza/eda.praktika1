@@ -123,6 +123,11 @@ public class PelikulaZerrenda {
 				 }
 				 entrada.close();
 				 }
-				 catch(IOException e) {e.printStackTrace();}
+				 catch(IOException e) {
+					 //ezdago fitxategia
+					 System.out.println("EZ DA FITXATEGIA AURKITZEN");
+					 //e.printStackTrace();
+					 System.exit(0);
+					 }
 		}
 }

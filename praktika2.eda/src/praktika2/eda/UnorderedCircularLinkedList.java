@@ -16,10 +16,12 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 	public void addToRear(T elem) {
 	// bukaeran gehitu
 		Node<T> elemN = new Node<T>(elem);
-		elemN.next = last.next;
-		last.next = elemN;
+		if(last != null){
+			elemN.next = last.next;
+			
+		}
 		last = elemN;
-		
+		last.next = elemN;
 	}
 	//target elementua listan dagoela suposatu behar da
 	/**
