@@ -110,10 +110,13 @@ public class PelikulaZerrenda {
 					p.gehituAktorea(a);
 					
 					if(!AktoreZerrenda.getAktoreZerrenda().zerrendanDago(aktore[i])){
+						//ez badago zerrendan aktorea zerrendara gehitzen dugu eta pelikula bere zerrendara gehitzen zaio
 						a.gehituPelikula(p);
 						AktoreZerrenda.getAktoreZerrenda().gehituAktorea(a);
 					}else{
+						//aktorea badago zerrendan pelikula gehitzen diogu bere zerrendari
 						AktoreZerrenda.getAktoreZerrenda().gehitu(p, aktore[i]);
+						
 					}
 				}
 				

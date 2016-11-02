@@ -2,7 +2,7 @@ package praktika.akt;
 
 import java.util.Scanner;
 
-public class MainP {
+public class AktorePeli_ProgramaNagusia {
 
 	private static Stopwatch timer;
 	public static void main(String[] args) {
