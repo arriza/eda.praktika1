@@ -76,6 +76,12 @@ public class PelikulaZerrenda {
 		z1 = null;
 		nirePelikulaZerrenda = null;
 	}
+	public void ezabatuAktorea(String izenOsoa){
+		//bilatu aktore hori dagoen pelikula guztietan eta ezabatu
+		for (Pelikula key : z1.values()) {
+	        key.ezabatuAktorea(izenOsoa);
+	    }
+	}
 	//fitxategitik datuak atera
 		@SuppressWarnings({ "resource", "unused" })
 		public void zerrendaKargatu(String nomF){

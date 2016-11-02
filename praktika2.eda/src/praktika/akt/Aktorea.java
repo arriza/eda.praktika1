@@ -2,10 +2,13 @@ package praktika.akt;
 
 import java.util.ArrayList;
 
+import praktika2.eda.UnorderedCircularLinkedList;
+
 public class Aktorea {
 	//Atributuak
 		private String izenOsoa;
-		private ArrayList<Pelikula> listaPelikulak=new ArrayList<Pelikula>();
+		//private ArrayList<Pelikula> listaPelikulak=new ArrayList<Pelikula>();
+		private UnorderedCircularLinkedList<Pelikula> listaPelikulak = new UnorderedCircularLinkedList<Pelikula>();
 		
 		//Eraikitzailea
 		
@@ -16,30 +19,36 @@ public class Aktorea {
 		public String getIzena() {
 			return izenOsoa;
 		}
-		public ArrayList<Pelikula> getPelikulaLista() {
+		/*public ArrayList<Pelikula> getPelikulaLista() {
 			return this.listaPelikulak;
 
-		}
+		}*/
 
-		public void gehituPelikula(Pelikula peli) {
+		/*public void gehituPelikula(Pelikula peli) {
 			this.listaPelikulak.add(peli);
+		}*/
+		public void gehituPelikula(Pelikula peli){
+			if(!listaPelikulak.contains(peli)){
+				this.listaPelikulak.addToRear(peli);
+			}else{
+				System.out.println("Pelikula badago listan");
+			}
 		}
 		
 		
-		public void pelikulakInprimatu() {
-			/*
-			 * Aurre:Datu egitura ez dago hutsik
-			 * Post: aktorearen pelikulak pantailaratu
-			 * 
-			 */
+		/*public void pelikulakInprimatu() {
+			
 			int i;
 			for (i=0;i==this.listaPelikulak.size()-1;i++) {
 				System.out.println(this.listaPelikulak.get(i).getIzenburua());
 			}
+		}*/
+		public void pelikulakInprimatu() {
+			listaPelikulak.adabegiakInprimatu();
 		}
 		
 		public int pelikulaKopurua() {
-			return this.listaPelikulak.size();
+			return listaPelikulak.size();
 		}
 		
 		public int compareTo(Aktorea akt) {

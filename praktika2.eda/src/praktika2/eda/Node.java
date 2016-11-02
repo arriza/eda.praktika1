@@ -13,7 +13,7 @@ package praktika2.eda;
 		@Override
 		public int compareTo(T o) {
 			// TODO Auto-generated method stub
-			return 0;
+			return this.compareTo(o);
 		}
 	}
 

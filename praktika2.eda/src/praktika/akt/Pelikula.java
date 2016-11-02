@@ -32,14 +32,20 @@ public class Pelikula {
 			}
 		}
 		public boolean badagoAktorea(Aktorea a){
-			return this.listaAktoreak.contains(a);
+			return listaAktoreak.contains(a);
 		}
 		public int compareTo(Pelikula peli) {
 			return this.izenburua.compareTo(peli.izenburua);
 		}
-
+		public void ezabatuAktorea(String izenOsoa){
+			Aktorea a = new Aktorea(izenOsoa);
+			//nodoaren .data konparatzen ditu
+			if(listaAktoreak.contains(a)){
+				listaAktoreak.remove(a);
+			}
+		}
 		public int aktoreKopurua() {
-			return this.listaAktoreak.size();
+			return listaAktoreak.size();
 		}
 		
 		/*public void kenduAktorea(Aktorea akt)

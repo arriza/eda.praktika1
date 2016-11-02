@@ -78,6 +78,7 @@ public class AktoreZerrenda {
 		 */
 		if(AktoreZerrenda.getAktoreZerrenda().zerrendanDago(izenOsoa)){
 			AktoreZerrenda.getAktoreZerrenda().z1.remove(izenOsoa);
+			PelikulaZerrenda.getPelikulaZerrenda().ezabatuAktorea(izenOsoa);
 			System.out.println(izenOsoa+" aktorea ezabatu da.");
 		}else{
 			System.out.println("Ezin da "+izenOsoa+" ezabatu, zerrendan ez dagoelako");
