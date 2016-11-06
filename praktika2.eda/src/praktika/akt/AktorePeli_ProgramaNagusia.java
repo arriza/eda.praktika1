@@ -195,3 +195,4 @@ public class AktorePeli_ProgramaNagusia {
 		PelikulaZerrenda.getPelikulaZerrenda().hasieratu();
 	}
 }
+
