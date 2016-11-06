@@ -40,7 +40,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	}
 
 	/**
-	 * Kostua konstantea O(n)izango da zerrenda osoa zeharkatu behar delako
+	 * Kostua O(n)izango da zerrenda osoa zeharkatu behar delako
 	 * n=zerrendan dauden elementu kopurua izanda
 	 * esleipenenen kostua kte. da
 	 */
@@ -61,7 +61,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
     }
 
 	/**
-	 * Kostua konstantea O(n)izango da zerrenda zeharkatu behar delako, kasurik txarrenean zerrenda osoa zeharkatuko da
+	 * Kostua O(n)izango da zerrenda zeharkatu behar delako, kasurik txarrenean zerrenda osoa zeharkatuko da
 	 * n=zerrendan dauden elementu kopurua izanda
 	 * esleipenenen kostua kte. da
 	 */
@@ -83,29 +83,42 @@ public class CircularLinkedList<T> implements ListADT<T> {
 			}
 		}
 		//elementua ezabatu
-		if(current.next == last){
-			current.next = last.next;
-			last = current;
+		if(!jarraitu){
+			if(current.next == last){
+				current.next = last.next;
+				last = current;
+			}else{
+				current.next = current.next.next;
+			}
 		}else{
-			current.next = current.next.next;
+			//ez dago elementua zerrendan
+			r = null;
 		}
 		return(r);
     }
-
+	/**
+	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da
+	 */
 	public T first() {
 	// listako lehen elementua ematen du
 	      if (isEmpty())
 	          return null;
 	      else return last.next.data;
 	}
-
+	/**
+	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da
+	 */
 	public T last() {
 	// listako azken elementua ematen du
 	      if (isEmpty())
 	          return null;
 	      else return last.data;
 	}
-
+	/**
+	 * Kostua O(n)izango da zerrenda zeharkatu behar delako, kasurik txarrenean zerrenda osoa zeharkatuko da
+	 * n=zerrendan dauden elementu kopurua izanda
+	 * esleipenenen kostua kte. da
+	 */
 	public boolean contains(T elem) {
 	// Egiazkoa bueltatuko du aurkituz gero, eta false bestela
 		boolean badago = false;
@@ -122,7 +135,11 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		}return(badago);
 	
 		   }
-
+	/**
+	 * Kostua O(n)izango da zerrenda zeharkatu behar delako, kasurik txarrenean zerrenda osoa zeharkatuko da
+	 * n=zerrendan dauden elementu kopurua izanda
+	 * esleipenenen kostua kte. da
+	 */
 	@SuppressWarnings("unchecked")
 	public T find(T elem) {
 	// Elementua bueltatuko du aurkituz gero, eta null bestela
@@ -137,12 +154,19 @@ public class CircularLinkedList<T> implements ListADT<T> {
 				current = current.next;
 			}
 		}
+		if(!badago){
+			r = null;
+		}
 		return(r);
 	}
-
+	/**
+	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da
+	 */
 	public boolean isEmpty() 
 	{ return last == null;};
-	
+	/**
+	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da
+	 */
 	public int size() 
 	{ return count;};
 	
