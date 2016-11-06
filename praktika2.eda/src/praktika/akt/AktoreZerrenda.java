@@ -143,7 +143,7 @@ public class AktoreZerrenda {
 	}
 	//aktoreen zerrenda fitxategi batean gorde
 		@SuppressWarnings("rawtypes")
-		public void idatziAktoreenFitx(){
+	public void idatziAktoreenFitx(){
 			FileWriter file;
 			/*
 			 * Aurre:Datu egitura ez dago hutsik
