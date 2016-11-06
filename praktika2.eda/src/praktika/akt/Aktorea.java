@@ -1,13 +1,12 @@
 package praktika.akt;
 
-import java.util.ArrayList;
 
+import praktika2.eda.CircularLinkedList;
 import praktika2.eda.UnorderedCircularLinkedList;
 
 public class Aktorea {
 	//Atributuak
 		private String izenOsoa;
-		//private ArrayList<Pelikula> listaPelikulak=new ArrayList<Pelikula>();
 		private UnorderedCircularLinkedList<Pelikula> listaPelikulak;
 		
 		//Eraikitzailea
@@ -20,14 +19,9 @@ public class Aktorea {
 		public String getIzena() {
 			return izenOsoa;
 		}
-		/*public ArrayList<Pelikula> getPelikulaLista() {
-			return this.listaPelikulak;
-
-		}*/
-
-		/*public void gehituPelikula(Pelikula peli) {
-			this.listaPelikulak.add(peli);
-		}*/
+		public CircularLinkedList<Pelikula> getListaPelikulak(){
+			return listaPelikulak;
+		}
 		public void gehituPelikula(Pelikula peli){
 			if(!listaPelikulak.contains(peli)){
 				this.listaPelikulak.addToRear(peli);
@@ -35,15 +29,18 @@ public class Aktorea {
 				System.out.println("Pelikula badago listan");
 			}
 		}
-		
-		
-		/*public void pelikulakInprimatu() {
+		public void ezabatuPelikula(String izenburua){
+			Pelikula p = new Pelikula(izenburua);
 			
-			int i;
-			for (i=0;i==this.listaPelikulak.size()-1;i++) {
-				System.out.println(this.listaPelikulak.get(i).getIzenburua());
+			p =listaPelikulak.remove(p);
+			if(p != null){
+				System.out.println("Ezabatutako pelikula"+p.getIzenburua());
 			}
-		}*/
+		}
+		public boolean badagoPelikula(String izenburua){
+			Pelikula p = new Pelikula(izenburua);
+			return listaPelikulak.contains(p);
+		}
 		public void pelikulakInprimatu() {
 			listaPelikulak.adabegiakInprimatu();
 		}

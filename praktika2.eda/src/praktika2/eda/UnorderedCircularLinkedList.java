@@ -9,6 +9,8 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		Node<T> elemN = new Node<T>(elem);
 		elemN.next = last.next;
 		last.next = elemN;
+		count++;
+		System.out.println(elemN.data);
 	}
 	/**
 	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da
@@ -16,12 +18,19 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 	public void addToRear(T elem) {
 	// bukaeran gehitu
 		Node<T> elemN = new Node<T>(elem);
-		if(last != null){
-			elemN.next = last.next;
+		if(last == null){
+			last = elemN;
+			last.next = last;
 			
+		}else{
+			elemN.next = last.next;
+			last.next = elemN;
+			last = elemN;
 		}
-		last = elemN;
-		last.next = elemN;
+		count++;
+		System.out.println(elemN.data);
+		
+		
 	}
 	//target elementua listan dagoela suposatu behar da
 	/**
@@ -46,7 +55,7 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		if(current == last){
 			last = berria;
 		}
-		
+		count++;
 	}
 
 }

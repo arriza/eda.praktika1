@@ -26,18 +26,21 @@ public class ProbaCircularLinkedList {
 		l.addToRear(0);
 		l.addToRear(20);
 		l.addToFront(8);
-		l.remove(new Integer(7));
+		System.out.println(l.last.next.data);
+	/*	l.remove(new Integer(7));*/
 
 		
 		System.out.print(" Lista ...............");
-		visualizarNodos(l);
+		//l.imprimatu();
+		//visualizarNodos(l);
 		System.out.println("Elementu-kopurua: " + l.size());
-				
+		System.out.println("Proba Contains ...............");
+		System.out.println("20? " + l.contains(20));	
 		
 		System.out.println("Proba Find ...............");
 		System.out.println("9? " + l.find(9));
-		System.out.println("0? " + l.find(0));
-		System.out.println("7? " + l.find(7));
+		/*System.out.println("0? " + l.find(0));
+		System.out.println("7? " + l.find(7));*/
 		
 }
 }

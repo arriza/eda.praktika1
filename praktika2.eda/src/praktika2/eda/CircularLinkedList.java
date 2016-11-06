@@ -74,16 +74,9 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		Node<T> current = last;
 		boolean jarraitu = true;
 		//aurkitu elementua
-		while(jarraitu && current.next != last){
-			if(current.next.data.equals(elem)){
-				r = current.next.data;
-				jarraitu = false;
-			}else{
-				current = current.next;
-			}
-		}
+		r = find(elem);
 		//elementua ezabatu
-		if(!jarraitu){
+		if(r != null){
 			if(current.next == last){
 				current.next = last.next;
 				last = current;
@@ -124,12 +117,16 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		boolean badago = false;
 		Node<T> current = last;
 		if(last != null){
-		
-			while(!badago && current.next != last){
-				if(current.data.equals(elem)){
-					badago = true;
-				}else{
+			if(current.data.equals(elem)){
+				badago = true;
+			
+			}else{
+				while(!badago && current.next != last){
+					if(current.next.data.equals(elem)){
+						badago = true;
+					}else{
 					current = current.next;
+					}
 				}
 			}
 		}return(badago);
@@ -146,12 +143,21 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		T r = (T)new Object();
 		Node<T> current = last;
 		boolean badago = false;
-		while(!badago && current.next != last){
+		if(last != null){
+				
 			if(current.data.equals(elem)){
-				badago = true;
-				r = current.data;
+					badago = true;
+					r = current.data;
+				
 			}else{
-				current = current.next;
+				while(!badago && current.next != last){
+					if(current.next.data.equals(elem)){
+						badago = true;
+						r = current.next.data;
+					}else{
+						current = current.next;
+					}
+				}	
 			}
 		}
 		if(!badago){
@@ -198,7 +204,21 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	   } // private class
 	   
 	   
-		
+		public void imprimatu(){
+			Node<T> current = last.next;
+			if(!isEmpty()){
+				if(last.next == last){
+					//elementu bakarreko lista
+					System.out.println(current.data.toString());
+				}else{
+					//elementu bat baino gehiago
+					while(current!= last){
+						System.out.println(current.data.toString());
+						current = current.next;
+					}
+				}
+			}
+		}
 		
 		public void adabegiakInprimatu() {
 			System.out.println(this.toString());

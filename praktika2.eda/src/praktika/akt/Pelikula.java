@@ -2,6 +2,7 @@ package praktika.akt;
 
 import java.util.ArrayList;
 
+import praktika2.eda.CircularLinkedList;
 import praktika2.eda.UnorderedCircularLinkedList;
 
 public class Pelikula {
@@ -20,11 +21,9 @@ public class Pelikula {
 		public String getIzenburua() {
 			return this.izenburua;
 		}
-		/*public void gehituAktorea(Aktorea akt) {
-			if(!badagoAktorea(akt)){
-				this.listaAktoreak.add(akt);
-			}
-		}*/
+		public CircularLinkedList<Aktorea> getListaAktoreak(){
+			return listaAktoreak;
+		}
 		public void gehituAktorea(Aktorea akt){
 			if(!listaAktoreak.contains(akt)){
 				listaAktoreak.addToRear(akt);
@@ -41,28 +40,17 @@ public class Pelikula {
 		public void ezabatuAktorea(String izenOsoa){
 			Aktorea a = new Aktorea(izenOsoa);
 			//nodoaren .data konparatzen ditu
-			if(listaAktoreak.contains(a)){
-				listaAktoreak.remove(a);
+			a =listaAktoreak.remove(a);
+			if(a != null){
+				System.out.println("Ezabatutako pelikula"+a.getIzena());
 			}
 		}
 		public int aktoreKopurua() {
 			return listaAktoreak.size();
 		}
-		
-		/*public void kenduAktorea(Aktorea akt)
-		{
-			int k=this.listaAktoreak.indexOf(akt);
-			this.listaAktoreak.remove(k);
-		}
-		public ArrayList<Aktorea> getListaAktoreak()
-		{
-			return this.listaAktoreak;
-		}
 		public void imprimatuAktoreak(){
-			for(int i = 0; i<this.getListaAktoreak().size(); i++){
-				System.out.println(this.getListaAktoreak().get(i).getIzena());
-			}
-		}*/
+			listaAktoreak.adabegiakInprimatu();
+		}
 		@Override
 		public int hashCode() {
 			final int prime = 31;

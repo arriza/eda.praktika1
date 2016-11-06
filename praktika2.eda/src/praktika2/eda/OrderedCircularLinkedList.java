@@ -25,6 +25,7 @@ public class OrderedCircularLinkedList<T> extends CircularLinkedList<T> implemen
 				last = berria;
 			}
 		}
+		count++;
 
 
 
