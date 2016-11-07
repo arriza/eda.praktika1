@@ -35,6 +35,10 @@ public class Pelikula {
 		public boolean badagoAktorea(Aktorea a){
 			return listaAktoreak.contains(a);
 		}
+		public Aktorea findAktorea(String izena){
+			Aktorea a = new Aktorea(izena);
+			return listaAktoreak.find(a);
+		}
 		public int compareTo(Pelikula peli) {
 			return this.izenburua.compareTo(peli.izenburua);
 		}

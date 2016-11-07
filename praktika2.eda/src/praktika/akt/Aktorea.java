@@ -42,6 +42,10 @@ public class Aktorea {
 			Pelikula p = new Pelikula(izenburua);
 			return listaPelikulak.contains(p);
 		}
+		public Pelikula findPeli(String izenburua){
+			Pelikula p = new Pelikula(izenburua);
+			return listaPelikulak.find(p);
+		}
 		public void imprimatu(){
 			System.out.println(this.getIzena());
 		}
