@@ -18,16 +18,7 @@ public class ProbaAktoreaOrderedCircularLL {
 		Pelikula p10 = new Pelikula("Harry Potter VII");
 		
 		Aktorea a = new Aktorea("Colin Firth");
-		a.gehituPelikula(p1);
-		a.gehituPelikula(p2);
-		a.gehituPelikula(p3);
-		a.gehituPelikula(p4);
-		a.gehituPelikula(p5);
-		a.gehituPelikula(p6);
-		a.gehituPelikula(p7);
-		a.gehituPelikula(p8);
-		a.gehituPelikula(p9);
-		a.gehituPelikula(p10);
+		//
 	}
 
 }
