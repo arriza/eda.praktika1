@@ -58,17 +58,17 @@ public class Pelikula {
 		}
 		public void imprimatuAktoreak(){
 			//listaAktoreak.adabegiakInprimatu();
-			Node<Aktorea> current = listaAktoreak.getLast().next;
+			Node<Aktorea> current = listaAktoreak.getLast();
 			if(!listaAktoreak.isEmpty()){
 				if(listaAktoreak.getLast().next == listaAktoreak.getLast()){
 					//elementu bakarreko lista
 					current.data.imprimatu();
 				}else{
 					//elementu bat baino gehiago
-					while(current!= listaAktoreak.getLast()){
-						current.data.imprimatu();
+					while(current.next!= listaAktoreak.getLast()){
+						current.next.data.imprimatu();
 						current = current.next;
-					}
+					}listaAktoreak.getLast().data.imprimatu();
 				}
 			}
 		}

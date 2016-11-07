@@ -51,17 +51,18 @@ public class Aktorea {
 		}
 		public void pelikulakInprimatu() {
 			//listaPelikulak.adabegiakInprimatu();
-			Node<Pelikula> current = listaPelikulak.getLast().next;
+			Node<Pelikula> current = listaPelikulak.getLast();
 			if(!listaPelikulak.isEmpty()){
 				if(listaPelikulak.getLast().next == listaPelikulak.getLast()){
 					//elementu bakarreko lista
 					current.data.imprimatu();
 				}else{
 					//elementu bat baino gehiago
-					while(current!= listaPelikulak.getLast()){
-						current.data.imprimatu();
+					while(current.next!= listaPelikulak.getLast()){
+						current.next.data.imprimatu();
 						current = current.next;
 					}
+					listaPelikulak.getLast().data.imprimatu();
 				}
 			}
 		}
