@@ -28,7 +28,7 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 			last = elemN;
 		}
 		count++;
-		System.out.println(elemN.data);
+		//System.out.println(elemN.data);
 		
 		
 	}

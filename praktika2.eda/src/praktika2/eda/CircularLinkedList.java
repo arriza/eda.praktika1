@@ -16,7 +16,9 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		deskr = "";
 		count = 0;
 	}
-	
+	public Node<T> getLast(){
+		return last;
+	}
 	public void setDeskr(String ize) {
 	  deskr = ize;
 	}

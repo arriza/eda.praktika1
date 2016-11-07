@@ -11,7 +11,7 @@ public class AktorePeli_ProgramaNagusia {
 		//fitxategia proiektuaren barruan dago, baina irakurtzeko klase bat erabiliko da
 		timer = new Stopwatch();
 		System.out.println("Datuak kargatzen...");
-		String nomF = "fitxategiak/lista.txt";
+		String nomF = "fitxategiak/listaHandiagoa.txt";
 		PelikulaZerrenda.getPelikulaZerrenda().zerrendaKargatu(nomF);
 		System.out.println("Datuak kargatuta! :), emandako denbora --> "+timer.elapsedTime());
 		

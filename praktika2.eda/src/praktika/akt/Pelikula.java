@@ -3,6 +3,7 @@ package praktika.akt;
 
 
 import praktika2.eda.CircularLinkedList;
+import praktika2.eda.Node;
 import praktika2.eda.UnorderedCircularLinkedList;
 
 public class Pelikula {
@@ -48,8 +49,24 @@ public class Pelikula {
 		public int aktoreKopurua() {
 			return listaAktoreak.size();
 		}
+		public void imprimatu(){
+			System.out.println(this.getIzenburua());
+		}
 		public void imprimatuAktoreak(){
-			listaAktoreak.adabegiakInprimatu();
+			//listaAktoreak.adabegiakInprimatu();
+			Node<Aktorea> current = listaAktoreak.getLast().next;
+			if(!listaAktoreak.isEmpty()){
+				if(listaAktoreak.getLast().next == listaAktoreak.getLast()){
+					//elementu bakarreko lista
+					current.data.imprimatu();
+				}else{
+					//elementu bat baino gehiago
+					while(current!= listaAktoreak.getLast()){
+						current.data.imprimatu();
+						current = current.next;
+					}
+				}
+			}
 		}
 		@Override
 		public int hashCode() {
