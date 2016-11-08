@@ -31,8 +31,10 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da
 	 */
 	public T removeFirst() {
-	// listako lehen elementua kendu da
-	// Aurrebaldintza: zerrenda ez da hutsa
+	/* Aurrebaldintza: zerrenda ez da hutsa
+	Postbaldintza: zerrendako lehenengo elementua bueltatuko du 
+	 * eta listako lehen elementua kendu da
+	 */
 		T firstNode;
 		if(last.next.equals(last)){
 			firstNode = last.data;
@@ -54,8 +56,10 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	 * esleipenenen kostua kte. da
 	 */
 	public T removeLast() {
-	// listako azken elementua kendu da
-	// Aurrebaldintza: zerrenda ez da hutsa
+		/* Aurrebaldintza: zerrenda ez da hutsa
+		Postbaldintza: zerrendako azken elementua bueltatuko du 
+		 * eta listako azken elementua kendu da
+		 */
 		T lastNode;
 		if(last.next.equals(last)){
 			lastNode = last.data;
@@ -97,7 +101,6 @@ public class CircularLinkedList<T> implements ListADT<T> {
 			}else{
 			//elementu bat baino gehiagoko zerrenda
 				Node<T> current = last;
-				boolean jarraitu = true;
 			//elementua ezabatu
 				if(current.next == last){
 					current.next = last.next;
