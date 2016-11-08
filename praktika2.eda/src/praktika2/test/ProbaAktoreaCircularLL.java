@@ -263,9 +263,39 @@ public class ProbaAktoreaCircularLL {
 				//elementu baten ondoren gehitu
 				System.out.println("");
 				System.out.println("Malefica elementuaren ondoren gehitu...");
-				a.ondorenGehitu(p10, "Malefica");
+				//a.ondorenGehitu(p10, "Malefica");
 				System.out.println("Emandako denbora --> "+timer.elapsedTime());
 				System.out.println("Elementu baten ondoren gehitzen lortutako lista berria...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
+				
+				/*
+				 * 3.PROBA KASUA:
+				 * Zerrenda hutsa
+				 */
+				System.out.println("3.PROBA KASUA: Zerrenda hutsa ");
+				a = null;
+				a = new Aktorea("Richard Gere");
+				p1 = new Pelikula("Pretty Woman");
+				
+				//aurrean gehitu
+				System.out.println("");
+				System.out.println("Elementu bat aurrean gehitu");
+				a.hasieranGehitu(p1);
+				System.out.println("Emandako denbora --> "+timer.elapsedTime());
+				System.out.println("Elementu bat hasieran gehitzen lortutako lista berria...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
+				a.ezabatuPelikula("Pretty Woman");
+				
+				//bukaeran gehitu
+				System.out.println("");
+				System.out.println("Elementu bat bukaeran gehitu");
+				a.bukaeranGehitu(p1);
+				System.out.println("Emandako denbora --> "+timer.elapsedTime());
+				System.out.println("Elementu bat bukaeran gehitzen lortutako lista berria...");
 				System.out.println(" ==================================");
 				a.pelikulakInprimatu();
 				System.out.println(" ==================================");
