@@ -120,6 +120,27 @@ public class ProbaAktoreaCircularLL {
 		a.pelikulakInprimatu();
 		System.out.println(" ==================================");
 		
+		//aurrean gehitu
+		System.out.println("");
+		System.out.println("Elementu bat aurrean gehitu");
+		a.hasieranGehitu(p10);
+		System.out.println("Emandako denbora --> "+timer.elapsedTime());
+		System.out.println("Elementu bat hasieran gehitzen lortutako lista berria...");
+		System.out.println(" ==================================");
+		a.pelikulakInprimatu();
+		System.out.println(" ==================================");
+		
+		//bukaeran gehitu
+		System.out.println("");
+		System.out.println("Elementu bat bukaeran gehitu");
+		a.bukaeranGehitu(p6);
+		System.out.println("Emandako denbora --> "+timer.elapsedTime());
+		System.out.println("Elementu bat bukaeran gehitzen lortutako lista berria...");
+		System.out.println(" ==================================");
+		a.pelikulakInprimatu();
+		System.out.println(" ==================================");
+		
+		
 		
 		/*
 		 * 2.PROBA KASUA:

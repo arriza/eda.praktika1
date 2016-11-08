@@ -70,7 +70,16 @@ public class Aktorea {
 		public int pelikulaKopurua() {
 			return listaPelikulak.size();
 		}
-		
+		public void hasieranGehitu(Pelikula p){
+			listaPelikulak.addToFront(p);
+		}
+		public void bukaeranGehitu(Pelikula p){
+			listaPelikulak.addToRear(p);
+		}
+		public void ondorenGehitu(Pelikula p, String izen){
+			Pelikula p2 = new Pelikula(izen);
+			listaPelikulak.addAfter(p,p2);
+		}
 		public int compareTo(Aktorea akt) {
 			return this.izenOsoa.compareTo(akt.izenOsoa);
 		}

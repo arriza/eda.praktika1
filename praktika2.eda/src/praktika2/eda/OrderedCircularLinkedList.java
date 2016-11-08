@@ -3,6 +3,7 @@ package praktika2.eda;
 public class OrderedCircularLinkedList<T> extends CircularLinkedList<T> implements OrderedListADT<T> {
 	
 	public void add(T elem){
+		//elementua dagokion posizioan gehitu
 		boolean jarraitu = true;
 		Node<T> current = last;
 		Node<T> berria = new Node<T>(elem);
@@ -26,9 +27,6 @@ public class OrderedCircularLinkedList<T> extends CircularLinkedList<T> implemen
 			}
 		}
 		count++;
-
-
-
 	}
 
 

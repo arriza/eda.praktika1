@@ -72,6 +72,16 @@ public class Pelikula {
 				}
 			}
 		}
+		public void hasieranGehitu(Aktorea p){
+			listaAktoreak.addToFront(p);
+		}
+		public void bukaeranGehitu(Aktorea p){
+			listaAktoreak.addToRear(p);
+		}
+		public void ondorenGehitu(Aktorea p, String izen){
+			Aktorea p2 = new Aktorea(izen);
+			listaAktoreak.addAfter(p,p2);
+		}
 		@Override
 		public int hashCode() {
 			final int prime = 31;
