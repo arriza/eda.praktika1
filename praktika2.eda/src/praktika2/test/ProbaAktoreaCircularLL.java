@@ -236,6 +236,39 @@ public class ProbaAktoreaCircularLL {
 				System.out.println(" ==================================");
 				a.pelikulakInprimatu();
 				System.out.println(" ==================================");
+				a.gehituPelikula(p1);
+				
+				//aurrean gehitu
+				System.out.println("");
+				System.out.println("Elementu bat aurrean gehitu");
+				a.hasieranGehitu(p10);
+				System.out.println("Emandako denbora --> "+timer.elapsedTime());
+				System.out.println("Elementu bat hasieran gehitzen lortutako lista berria...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
+				a.ezabatuPelikula("Harry Potter VII");
+				
+				//bukaeran gehitu
+				System.out.println("");
+				System.out.println("Elementu bat bukaeran gehitu");
+				a.bukaeranGehitu(p6);
+				System.out.println("Emandako denbora --> "+timer.elapsedTime());
+				System.out.println("Elementu bat bukaeran gehitzen lortutako lista berria...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
+				a.ezabatuPelikula("Harry Potter III");
+				
+				//elementu baten ondoren gehitu
+				System.out.println("");
+				System.out.println("Malefica elementuaren ondoren gehitu...");
+				a.ondorenGehitu(p10, "Malefica");
+				System.out.println("Emandako denbora --> "+timer.elapsedTime());
+				System.out.println("Elementu baten ondoren gehitzen lortutako lista berria...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
 
 	}
 
