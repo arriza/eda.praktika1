@@ -33,8 +33,15 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	public T removeFirst() {
 	// listako lehen elementua kendu da
 	// Aurrebaldintza: zerrenda ez da hutsa
-		T firstNode = last.next.data;
-		last.next = last.next.next;
+		T firstNode;
+		if(last.next.equals(last)){
+			firstNode = last.data;
+			last = null;
+		}else{
+			firstNode = last.next.data;
+			last.next = last.next.next;
+		}
+		
 		count --;
 		//listako lehen elementua bueltatzen du
 		return(firstNode);
@@ -49,14 +56,21 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	public T removeLast() {
 	// listako azken elementua kendu da
 	// Aurrebaldintza: zerrenda ez da hutsa
-		T lastNode = last.data;
-		Node<T> current = last;
-		//last -en aurreko nodoa aurkitu beharra dago
-		while(current.next != last){
-			current = current.next;
+		T lastNode;
+		if(last.next.equals(last)){
+			lastNode = last.data;
+			last = null;
+		}else{
+			lastNode = last.data;
+			Node<T> current = last;
+			//last -en aurreko nodoa aurkitu beharra dago
+			while(current.next != last){
+				current = current.next;
+			}
+			current.next = last.next;
+			last = current;
 		}
-		current.next = last.next;
-		last = current;
+		
 		count --;
 		return(lastNode);
 		
@@ -72,23 +86,28 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	// Aurrebaldintza: zerrenda ez da hutsa
 	// Balio hori listan baldin badago, bere lehen agerpena ezabatuko dut. Kendutako objektuaren erreferentzia 
         //  bueltatuko du (null ez baldin badago)
-		T r = (T)new Object();
-		Node<T> current = last;
-		boolean jarraitu = true;
+		T r;
 		//aurkitu elementua
 		r = find(elem);
-		//elementua ezabatu
 		if(r != null){
-			if(current.next == last){
-				current.next = last.next;
-				last = current;
+			if(last.next.equals(last)){
+			//elementu bakarreko zerrenda
+				r = last.data;
+				last = null;
 			}else{
-				current.next = current.next.next;
+			//elementu bat baino gehiagoko zerrenda
+				Node<T> current = last;
+				boolean jarraitu = true;
+			//elementua ezabatu
+				if(current.next == last){
+					current.next = last.next;
+					last = current;
+				}else{
+					current.next = current.next.next;
+				}
 			}
-		}else{
-			//ez dago elementua zerrendan
-			r = null;
 		}
+		
 		return(r);
     }
 	/**

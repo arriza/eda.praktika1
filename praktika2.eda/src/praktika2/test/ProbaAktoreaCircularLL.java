@@ -8,6 +8,11 @@ public class ProbaAktoreaCircularLL {
 
 	public static void main(String[] args) {
 		Stopwatch timer = new Stopwatch();
+		/*
+		 * 1.PROBA KASUA:
+		 * Elementu bat baino gehiago dituen zerrenda
+		 */
+		System.out.println("1.PROBA KASUA: Elementu bat baino gehiago dituen zerrenda ");
 		Pelikula p1 = new Pelikula("Bridget Jones I");
 		Pelikula p2 = new Pelikula("Bridget Jones II");
 		Pelikula p3 = new Pelikula("Bridget Jones III");
@@ -77,10 +82,10 @@ public class ProbaAktoreaCircularLL {
 		System.out.println("Lehenengo pelikula ezabatzen emandako denbora --> "+timer.elapsedTime());
 		ize1= "Bridget Jones I";
 		System.out.println(ize1+" zerrendan dago? "+ a.badagoPelikula(ize1));
-		System.out.print("Lista berria lehenengo elementua ezabatuta...");
-		System.out.print(" ==================================");
+		System.out.println("Lista berria lehenengo elementua ezabatuta...");
+		System.out.println(" ==================================");
 		a.pelikulakInprimatu();
-		System.out.print(" ==================================");
+		System.out.println(" ==================================");
 		
 		//azkena ezabatu
 		System.out.println("");
@@ -114,6 +119,102 @@ public class ProbaAktoreaCircularLL {
 		System.out.println(" ==================================");
 		a.pelikulakInprimatu();
 		System.out.println(" ==================================");
+		
+		
+		/*
+		 * 2.PROBA KASUA:
+		 * Elementu bakarra duen zerrenda
+		 */
+		System.out.println("2.PROBA KASUA: Elementu bakarra duen zerrenda ");
+		a = null;
+		a = new Aktorea("Angelina Jolie");
+		p1 = new Pelikula("Malefica");
+		a.gehituPelikula(p1);
+		
+		
+		//elementuak inprimatu
+				System.out.println(" Lista ...............");
+				System.out.println("");
+				a.pelikulakInprimatu();
+				System.out.println("Zerrenda inprimatzen emandako denbora --> "+timer.elapsedTime());
+				
+				//elementu kopurua
+				System.out.println("");
+				System.out.println(a.getIzena()+" aktoreak duen pelikula kopurua");
+				System.out.println(a.pelikulaKopurua());
+				
+				//elementua dagoen konprobatu
+				/*elementua ez dago*/
+				System.out.println("");
+				System.out.println("ELEMENTU BAT LISTAN DAGOEN EDO EZ KONPROBATU");
+				ize1 = "Ahora me ves";
+				System.out.println(ize1+" zerrendan dago? "+ a.badagoPelikula(ize1));
+				System.out.println(ize1+" pelikula bilatzen emandako denbora --> "+timer.elapsedTime());
+				System.out.println(ize1+" zerrendan dago? "+ a.findPeli(ize1));
+				
+				ize1 = "Malefica";
+				System.out.println(ize1+" zerrendan dago? "+ a.badagoPelikula(ize1));
+				System.out.println(ize1+" pelikula bilatzen emandako denbora --> "+timer.elapsedTime());
+				System.out.println(ize1+" zerrendan dago? "+ a.findPeli(ize1));
+				
+				//azken elementua
+				System.out.println("");
+				System.out.println(" Azken elementua ");
+				System.out.println(" ==================================");
+				a.getListaPelikulak().last().imprimatu();
+				System.out.println(" ==================================");
+				//lehenengo elementua
+				System.out.println("");
+				System.out.println(" Lehenengo elementua: ");
+				System.out.println(" ==================================");
+				a.getListaPelikulak().first().imprimatu();
+				System.out.println(" ==================================");
+				
+				//ezabatu lehenengoa
+				System.out.println("");
+				System.out.println("LISTAKO LEHENENGO ELEMENTUA EZABATU");
+				a.getListaPelikulak().removeFirst();
+				System.out.println("Lehenengo pelikula ezabatzen emandako denbora --> "+timer.elapsedTime());
+				ize1= "Malefica";
+				System.out.println(ize1+" zerrendan dago? "+ a.badagoPelikula(ize1));
+				System.out.println("Lista berria lehenengo elementua ezabatuta...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
+				a.gehituPelikula(p1);
+				//azkena ezabatu
+				System.out.println("");
+				System.out.println("LISTAKO AZKEN ELEMENTUA EZABATU");
+				a.getListaPelikulak().removeLast();
+				System.out.println("Azken pelikula ezabatzen emandako denbora --> "+timer.elapsedTime());
+				ize1= "Malefica";
+				System.out.println(ize1+" zerrendan dago? "+ a.badagoPelikula(ize1));
+				System.out.println("Lista berria azkenengo elementua ezabatuta...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
+				a.gehituPelikula(p1);
+				
+				//elementu bat ezabatu
+				/*P1: elementua ez dago zerrendan*/
+				System.out.println("");
+				System.out.println("Elementu bat ezabatzen... elementua ez dago zerrendan");
+				System.out.println(" ==================================");
+				ize1 = "Probak";
+				a.ezabatuPelikula(ize1);
+				System.out.println("Elementu bat ezabatzen emandako denbora --> "+timer.elapsedTime());
+				System.out.println(" ==================================");
+				/*P2: elementua badago zerrendan*/
+				System.out.println("");
+				ize1= "Malefica";
+				System.out.println("Elementu bat ezabatzen... elementua badago zerrendan");
+				a.ezabatuPelikula(ize1);
+				System.out.println(ize1+" ezabatzen emandako denbora --> "+timer.elapsedTime());
+				System.out.println(ize1+" zerrendan dago? "+ a.badagoPelikula(ize1));
+				System.out.println("Elementu bat ezabatzen lortutako lista berria...");
+				System.out.println(" ==================================");
+				a.pelikulakInprimatu();
+				System.out.println(" ==================================");
 
 	}
 
