@@ -163,6 +163,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	 */
 	@SuppressWarnings("unchecked")
 	public T find(T elem) {
+		//Aurre.: 
 	// Elementua bueltatuko du aurkituz gero, eta null bestela
 		T r = (T)new Object();
 		Node<T> current = last;

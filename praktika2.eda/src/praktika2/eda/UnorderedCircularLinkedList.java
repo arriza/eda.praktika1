@@ -7,8 +7,15 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 	public void addToFront(T elem) {
 	// hasieran gehitu
 		Node<T> elemN = new Node<T>(elem);
-		elemN.next = last.next;
-		last.next = elemN;
+		if(isEmpty()){
+			elemN.next = elemN;
+			last = elemN;
+			
+		}else{
+			elemN.next = last.next;
+			last.next = elemN;
+		}
+		
 		count++;
 		System.out.println(elemN.data);
 	}
@@ -32,13 +39,14 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		
 		
 	}
-	//target elementua listan dagoela suposatu behar da
+	
 	/**
 	 * Kostua konstantea O(n)izango da zerrenda osoa zeharkatu behar delako
 	 * n=zerrendan dauden elementu kopurua izanda
 	 * esleipenenen kostua kte. da
 	 */
 	public void addAfter(T elem, T target) {
+		//target elementua listan dagoela suposatu behar da
 		Node<T> current = last;
 		boolean aurkitu = false;
 		
