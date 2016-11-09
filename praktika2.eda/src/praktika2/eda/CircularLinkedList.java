@@ -5,12 +5,10 @@ import java.util.NoSuchElementException;
 
 @SuppressWarnings("unused")
 public class CircularLinkedList<T> implements ListADT<T> {
-
 	// Atributuak
 	protected Node<T> last; // azkenaren erreferentzia
 	protected String deskr;  // deskribapena
 	protected int count;
-
 	public CircularLinkedList() {
 		last = null;
 		deskr = "";
@@ -119,7 +117,6 @@ public class CircularLinkedList<T> implements ListADT<T> {
 					current.next = current.next.next;
 				}
 			
-				
 			}
 		}
 	return(r);
