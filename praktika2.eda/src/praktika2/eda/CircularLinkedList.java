@@ -94,11 +94,15 @@ public class CircularLinkedList<T> implements ListADT<T> {
 		//elementu bakarreko zerrenda
 		if(last.next.equals(last)){
 			if(last.data.equals(elem)){
+				r = last.data;
 				last = null;
 			}
 		}else{
 			Node<T> current = last.next;
 			boolean jarraitu = true;
+			if(current.data.equals(elem)){
+				jarraitu = false;
+			}
 			while(jarraitu && current != last){
 				if(current.next.data.equals(elem)){
 					jarraitu = false;

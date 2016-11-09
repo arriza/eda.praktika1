@@ -109,12 +109,22 @@ public class ProbaAktoreaCircularLL {
 		System.out.println(" ==================================");
 		/* P2: elementua badago zerrendan */
 		System.out.println("");
-		ize1 = "Bridget Jones III";
+		ize1 = "Harry Potter VII";
 		System.out.println("Elementu bat ezabatzen... elementua badago zerrendan");
 		a.ezabatuPelikula(ize1);
 		System.out.println(ize1 + " ezabatzen emandako denbora --> " + timer.elapsedTime());
 		System.out.println(ize1 + " zerrendan dago? " + a.badagoPelikula(ize1));
 		System.out.println("Elementu bat ezabatzen lortutako zerrenda berria...");
+		System.out.println(" ==================================");
+		a.pelikulakInprimatu();
+		System.out.println(" ==================================");
+		
+		// elementu baten ondoren gehitu
+		System.out.println("");
+		System.out.println("Harry Potter II elementuaren ondoren gehitu...");
+		a.ondorenGehitu(p1, "Harry Potter II");
+		System.out.println("Emandako denbora --> " + timer.elapsedTime());
+		System.out.println("Elementu baten ondoren gehitzen lortutako zerrenda berria...");
 		System.out.println(" ==================================");
 		a.pelikulakInprimatu();
 		System.out.println(" ==================================");

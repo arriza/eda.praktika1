@@ -50,9 +50,9 @@ public class UnorderedCircularLinkedList<T> extends CircularLinkedList<T> implem
 		Node<T> current = last;
 		boolean aurkitu = false;
 		Node<T> berria = new Node<T>(elem);
-		if(last.equals(target)){
-			berria.next = last;
-			last.next = berria;
+		if(current.data.equals(target)){
+			berria.next = current.next;
+			current.next = berria;
 			last = berria;
 		}else{
 			while(!aurkitu){
