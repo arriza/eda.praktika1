@@ -258,7 +258,7 @@ public class ProbaAktoreaCircularLL {
 		// elementu baten ondoren gehitu
 		System.out.println("");
 		System.out.println("Malefica elementuaren ondoren gehitu...");
-		// a.ondorenGehitu(p10, "Malefica");
+		a.ondorenGehitu(p10, "Malefica");
 		System.out.println("Emandako denbora --> " + timer.elapsedTime());
 		System.out.println("Elementu baten ondoren gehitzen lortutako zerrenda berria...");
 		System.out.println(" ==================================");

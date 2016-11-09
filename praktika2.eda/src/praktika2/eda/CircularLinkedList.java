@@ -90,9 +90,33 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	// Aurrebaldintza: zerrenda ez da hutsa
 	// Balio hori listan baldin badago, bere lehen agerpena ezabatuko dut. Kendutako objektuaren erreferentzia 
         //  bueltatuko du (null ez baldin badago)
-		T r;
+		T r = null;
+		//elementu bakarreko zerrenda
+		if(last.next.equals(last)){
+			if(last.data.equals(elem)){
+				last = null;
+			}
+		}else{
+			Node<T> current = last.next;
+			boolean jarraitu = true;
+			while(jarraitu && current != last){
+				if(current.next.data.equals(elem)){
+					jarraitu = false;
+				}else{
+					current = current.next;
+				}
+			}
+			if(!jarraitu){
+				r = current.next.data;
+				if( current.next == last){
+					last = current;
+				}
+				current.next = current.next.next;
+				
+			}
+		}
 		//aurkitu elementua
-		r = find(elem);
+		/*r = find(elem);
 		if(r != null){
 			if(last.next.equals(last)){
 			//elementu bakarreko zerrenda
@@ -109,7 +133,7 @@ public class CircularLinkedList<T> implements ListADT<T> {
 					current.next = current.next.next;
 				}
 			}
-		}
+		}*/
 		
 		return(r);
     }
