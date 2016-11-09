@@ -85,7 +85,6 @@ public class CircularLinkedList<T> implements ListADT<T> {
 	 * n=zerrendan dauden elementu kopurua izanda
 	 * esleipenenen kostua kte. da
 	 */
-	@SuppressWarnings("unchecked")
 	public T remove(T elem) {
 	// Aurrebaldintza: zerrenda ez da hutsa
 	// Balio hori listan baldin badago, bere lehen agerpena ezabatuko dut. Kendutako objektuaren erreferentzia 
@@ -99,47 +98,31 @@ public class CircularLinkedList<T> implements ListADT<T> {
 			}
 		}else{
 			Node<T> current = last.next;
-			boolean jarraitu = true;
+			
 			if(current.data.equals(elem)){
-				jarraitu = false;
-			}
-			while(jarraitu && current != last){
-				if(current.next.data.equals(elem)){
-					jarraitu = false;
-				}else{
-					current = current.next;
+				r = current.data;
+				last.next = current.next;
+			}else{
+				boolean jarraitu = true;
+				while(jarraitu && current != last){
+					if(current.next.data.equals(elem)){
+						jarraitu = false;
+					}else{
+						current = current.next;
+					}
 				}
-			}
-			if(!jarraitu){
-				r = current.next.data;
-				if( current.next == last){
-					last = current;
+				if(!jarraitu){
+					r = current.next.data;
+					if( current.next == last){
+						last = current;
+					}
+					current.next = current.next.next;
 				}
-				current.next = current.next.next;
+			
 				
 			}
 		}
-		//aurkitu elementua
-		/*r = find(elem);
-		if(r != null){
-			if(last.next.equals(last)){
-			//elementu bakarreko zerrenda
-				r = last.data;
-				last = null;
-			}else{
-			//elementu bat baino gehiagoko zerrenda
-				Node<T> current = last;
-			//elementua ezabatu
-				if(current.next == last){
-					current.next = last.next;
-					last = current;
-				}else{
-					current.next = current.next.next;
-				}
-			}
-		}*/
-		
-		return(r);
+	return(r);
     }
 	/**
 	 * Kostua konstantea O(1) esleipenak bakarrik egiten direlako eta esleipenen kostua kte. da

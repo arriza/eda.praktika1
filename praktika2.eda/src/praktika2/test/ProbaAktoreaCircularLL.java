@@ -243,6 +243,17 @@ public class ProbaAktoreaCircularLL {
 		System.out.println(" ==================================");
 		a.gehituPelikula(p1);
 
+		// elementu baten ondoren gehitu
+		System.out.println("");
+		System.out.println("Malefica elementuaren ondoren gehitu...");
+		a.ondorenGehitu(p10, "Malefica");
+		System.out.println("Emandako denbora --> " + timer.elapsedTime());
+		System.out.println("Elementu baten ondoren gehitzen lortutako zerrenda berria...");
+		System.out.println(" ==================================");
+		a.pelikulakInprimatu();
+		System.out.println(" ==================================");
+		a.ezabatuPelikula("Harry Potter VII");
+
 		// aurrean gehitu
 		System.out.println("");
 		System.out.println("Elementu bat aurrean gehitu");
@@ -265,16 +276,7 @@ public class ProbaAktoreaCircularLL {
 		System.out.println(" ==================================");
 		a.ezabatuPelikula("Harry Potter III");
 
-		// elementu baten ondoren gehitu
-		System.out.println("");
-		System.out.println("Malefica elementuaren ondoren gehitu...");
-		a.ondorenGehitu(p10, "Malefica");
-		System.out.println("Emandako denbora --> " + timer.elapsedTime());
-		System.out.println("Elementu baten ondoren gehitzen lortutako zerrenda berria...");
-		System.out.println(" ==================================");
-		a.pelikulakInprimatu();
-		System.out.println(" ==================================");
-
+		
 		/*
 		 * 3.PROBA KASUA: Zerrenda hutsa
 		 */
