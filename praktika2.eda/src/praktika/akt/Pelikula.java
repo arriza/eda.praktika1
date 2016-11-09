@@ -4,6 +4,7 @@ package praktika.akt;
 
 import praktika2.eda.CircularLinkedList;
 import praktika2.eda.Node;
+import praktika2.eda.OrderedCircularLinkedList;
 import praktika2.eda.UnorderedCircularLinkedList;
 
 public class Pelikula {
@@ -12,7 +13,7 @@ public class Pelikula {
 		private String izenburua;
 		//private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>();
 		private UnorderedCircularLinkedList<Aktorea> listaAktoreak ;
-		
+		private OrderedCircularLinkedList<Aktorea> listaAktoreOrdenatuak;
 		
 		public Pelikula(String izenburua){
 			this.izenburua=izenburua;
@@ -30,6 +31,13 @@ public class Pelikula {
 				listaAktoreak.addToRear(akt);
 			}else{
 				System.out.println("Aktorea badago listan");
+			}
+		}
+		public void gehituPelikulaOrdenatua(Aktorea akt){
+			if(!listaAktoreOrdenatuak.contains(akt)){
+				this.listaAktoreOrdenatuak.add(akt);
+			}else{
+				System.out.println("Aktorea badago zerrendan");
 			}
 		}
 		public boolean badagoAktorea(Aktorea a){

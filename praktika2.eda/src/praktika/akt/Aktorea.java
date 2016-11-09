@@ -3,18 +3,20 @@ package praktika.akt;
 
 import praktika2.eda.CircularLinkedList;
 import praktika2.eda.Node;
+import praktika2.eda.OrderedCircularLinkedList;
 import praktika2.eda.UnorderedCircularLinkedList;
 
 public class Aktorea {
 	//Atributuak
 		private String izenOsoa;
 		private UnorderedCircularLinkedList<Pelikula> listaPelikulak;
-		
+		private OrderedCircularLinkedList<Pelikula> listaPelikulaOrdenatuak;
 		//Eraikitzailea
 		
 		public Aktorea (String izenOsoa){
 			this.izenOsoa=izenOsoa;
 			listaPelikulak  = new UnorderedCircularLinkedList<Pelikula>();
+			listaPelikulaOrdenatuak= new OrderedCircularLinkedList<Pelikula>();
 		}
 		
 		public String getIzena() {
@@ -28,6 +30,13 @@ public class Aktorea {
 				this.listaPelikulak.addToRear(peli);
 			}else{
 				System.out.println("Pelikula badago listan");
+			}
+		}
+		public void gehituPelikulaOrdenatua(Pelikula peli){
+			if(!listaPelikulaOrdenatuak.contains(peli)){
+				this.listaPelikulaOrdenatuak.add(peli);
+			}else{
+				System.out.println("Pelikula badago zerrendan");
 			}
 		}
 		public void ezabatuPelikula(String izenburua){

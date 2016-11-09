@@ -252,11 +252,12 @@ public class ProbaPelikulaCircularLL {
 		p.imprimatuAktoreak();
 		System.out.println(" ==================================");
 		p.ezabatuAktorea(a6.getIzena());
-
+		
 		// elementu baten ondoren gehitu
 		System.out.println("");
 		System.out.println("Gerard Butler elementuaren ondoren gehitu...");
-//		p.ondorenGehitu(a1, "Lena Headey");
+		Aktorea aBerria=new Aktorea("Lena Headey");
+		p.ondorenGehitu(aBerria,a1.getIzena());
 		System.out.println("Emandako denbora --> " + timer.elapsedTime());
 		System.out.println("Elementu baten ondoren gehitzen lortutako zerrenda berria...");
 		System.out.println(" ==================================");
