@@ -65,19 +65,19 @@ public class ProbaAktoreaCircularLL {
 		System.out.println("");
 		System.out.println(" Azken elementua ");
 		System.out.println(" ==================================");
-		a.getListaPelikulak().last().imprimatu();
+		a.azkenPelikulaInprimatu();
 		System.out.println(" ==================================");
 		// lehenengo elementua
 		System.out.println("");
 		System.out.println(" Lehenengo elementua: ");
 		System.out.println(" ==================================");
-		a.getListaPelikulak().first().imprimatu();
+		a.lehenPelikulaInprimatu();
 		System.out.println(" ==================================");
 
 		// ezabatu lehenengoa
 		System.out.println("");
 		System.out.println("LISTAKO LEHENENGO ELEMENTUA EZABATU");
-		a.getListaPelikulak().removeFirst();
+		a.lehenPelikulaEzabatu();
 		System.out.println("Lehenengo pelikula ezabatzen emandako denbora --> " + timer.elapsedTime());
 		ize1 = "Bridget Jones I";
 		System.out.println(ize1 + " zerrendan dago? " + a.badagoPelikula(ize1));
@@ -89,7 +89,7 @@ public class ProbaAktoreaCircularLL {
 		// azkena ezabatu
 		System.out.println("");
 		System.out.println("LISTAKO AZKEN ELEMENTUA EZABATU");
-		a.getListaPelikulak().removeLast();
+		a.azkenPelikulaEzabatu();
 		System.out.println("Azken pelikula ezabatzen emandako denbora --> " + timer.elapsedTime());
 		ize1 = "Harry Potter VII";
 		System.out.println(ize1 + " zerrendan dago? " + a.badagoPelikula(ize1));
@@ -187,19 +187,19 @@ public class ProbaAktoreaCircularLL {
 		System.out.println("");
 		System.out.println(" Azken elementua ");
 		System.out.println(" ==================================");
-		a.getListaPelikulak().last().imprimatu();
+		a.azkenPelikulaInprimatu();;
 		System.out.println(" ==================================");
 		// lehenengo elementua
 		System.out.println("");
 		System.out.println(" Lehenengo elementua: ");
 		System.out.println(" ==================================");
-		a.getListaPelikulak().first().imprimatu();
+		a.lehenPelikulaInprimatu();;
 		System.out.println(" ==================================");
 
 		// ezabatu lehenengoa
 		System.out.println("");
 		System.out.println("LISTAKO LEHENENGO ELEMENTUA EZABATU");
-		a.getListaPelikulak().removeFirst();
+		a.lehenPelikulaEzabatu();
 		System.out.println("Lehenengo pelikula ezabatzen emandako denbora --> " + timer.elapsedTime());
 		ize1 = "Malefica";
 		System.out.println(ize1 + " zerrendan dago? " + a.badagoPelikula(ize1));
@@ -211,7 +211,7 @@ public class ProbaAktoreaCircularLL {
 		// azkena ezabatu
 		System.out.println("");
 		System.out.println("LISTAKO AZKEN ELEMENTUA EZABATU");
-		a.getListaPelikulak().removeLast();
+		a.azkenPelikulaEzabatu();;
 		System.out.println("Azken pelikula ezabatzen emandako denbora --> " + timer.elapsedTime());
 		ize1 = "Malefica";
 		System.out.println(ize1 + " zerrendan dago? " + a.badagoPelikula(ize1));

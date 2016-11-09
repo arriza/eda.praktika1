@@ -58,6 +58,18 @@ public class Aktorea {
 		public void imprimatu(){
 			System.out.println(this.getIzena());
 		}
+		public void azkenPelikulaInprimatu(){
+			listaPelikulak.last().imprimatu();
+		}
+		public void lehenPelikulaInprimatu(){
+			listaPelikulak.first().imprimatu();
+		}
+		public void lehenPelikulaEzabatu(){
+			listaPelikulak.removeFirst();
+		}
+		public void azkenPelikulaEzabatu(){
+			listaPelikulak.removeLast();
+		}
 		public void pelikulakInprimatu() {
 			//listaPelikulak.adabegiakInprimatu();
 			Node<Pelikula> current = listaPelikulak.getLast();

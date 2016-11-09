@@ -64,6 +64,18 @@ public class Pelikula {
 		public void imprimatu(){
 			System.out.println(this.getIzenburua());
 		}
+		public void azkenAktoreaInprimatu(){
+			listaAktoreak.last().imprimatu();
+		}
+		public void lehenAktoreaInprimatu(){
+			listaAktoreak.first().imprimatu();
+		}
+		public void lehenAktoreaEzabatu(){
+			listaAktoreak.removeFirst();
+		}
+		public void azkenAktoreaEzabatu(){
+			listaAktoreak.removeLast();
+		}
 		public void imprimatuAktoreak(){
 			//listaAktoreak.adabegiakInprimatu();
 			Node<Aktorea> current = listaAktoreak.getLast();
