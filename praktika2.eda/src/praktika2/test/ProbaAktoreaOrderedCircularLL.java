@@ -74,12 +74,13 @@ public class ProbaAktoreaOrderedCircularLL {
 		a.getListaPelikulak().first().imprimatu();
 		System.out.println(" ==================================");
 
-		// bukaeran gehitu
+		// txertatu
 		System.out.println("");
-		System.out.println("Elementu bat bukaeran gehitu");
-		a.gehituPelikulaOrdenatua(p6);
+		System.out.println("Elementu bat txertatu");
+		Pelikula proba=new Pelikula("Proba");
+		a.gehituPelikulaOrdenatua(proba);
 		System.out.println("Emandako denbora --> " + timer.elapsedTime());
-		System.out.println("Elementu bat bukaeran gehitzen lortutako zerrenda berria...");
+		System.out.println("Elementu bat txertatzean lortutako zerrenda berria...");
 		System.out.println(" ==================================");
 		a.pelikulakInprimatu();
 		System.out.println(" ==================================");

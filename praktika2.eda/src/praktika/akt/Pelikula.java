@@ -17,6 +17,7 @@ public class Pelikula {
 		public Pelikula(String izenburua){
 			this.izenburua=izenburua;
 			listaAktoreak = new UnorderedCircularLinkedList<Aktorea>();
+			listaAktoreOrdenatuak = new OrderedCircularLinkedList<Aktorea>();
 		}
 		
 		public String getIzenburua() {
@@ -32,7 +33,7 @@ public class Pelikula {
 				System.out.println("Aktorea badago listan");
 			}
 		}
-		public void gehituPelikulaOrdenatua(Aktorea akt){
+		public void gehituAktoreOrdenatua(Aktorea akt){
 			if(!listaAktoreOrdenatuak.contains(akt)){
 				this.listaAktoreOrdenatuak.add(akt);
 			}else{
