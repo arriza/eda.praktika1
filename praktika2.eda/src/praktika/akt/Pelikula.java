@@ -11,7 +11,6 @@ public class Pelikula {
 	//Atributuak
 	
 		private String izenburua;
-		//private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>();
 		private UnorderedCircularLinkedList<Aktorea> listaAktoreak ;
 		private OrderedCircularLinkedList<Aktorea> listaAktoreOrdenatuak;
 		
