@@ -70,13 +70,13 @@ public class AktoreZerrenda {
 		
 	}
 	//aktore baten ezabaketa
-	public void ezabatuAktorea(String izenOsoa){
+	public void ezabatuAktorea(Aktorea izenOsoa){
 		/*
 		 * Aurre:Datu egitura ez dago hutsik
 		 * Post: aktorearen ezabatuko du zerrendan badago
 		 * 		ez badago, mezu bat pantailaratuko da
 		 */
-		if(AktoreZerrenda.getAktoreZerrenda().zerrendanDago(izenOsoa)){
+		if(AktoreZerrenda.getAktoreZerrenda().zerrendanDago(izenOsoa.getIzena())){
 			AktoreZerrenda.getAktoreZerrenda().z1.remove(izenOsoa);
 			PelikulaZerrenda.getPelikulaZerrenda().ezabatuAktorea(izenOsoa);
 			System.out.println(izenOsoa+" aktorea ezabatu da.");

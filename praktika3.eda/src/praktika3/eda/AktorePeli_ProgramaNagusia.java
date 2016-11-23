@@ -177,7 +177,8 @@ public class AktorePeli_ProgramaNagusia {
 		Scanner sc = new Scanner(System.in);
 		aIzena = sc.nextLine();
 		timer = new Stopwatch();
-		AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(aIzena);
+		Aktorea a = new Aktorea(aIzena);
+		AktoreZerrenda.getAktoreZerrenda().ezabatuAktorea(a);
 		System.out.println(aIzena+" ezabatzeko emandako denbora --> "+timer.elapsedTime());
 	}
 	private static void idatziFitxategia(){
