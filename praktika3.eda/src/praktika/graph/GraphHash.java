@@ -49,16 +49,24 @@ public class GraphHash {
 		int hasiera = g.get(p1).indexOf(p1);
 		int bukaera = g.get(p2).indexOf(p2);
 		boolean [] bisitatuak = new boolean[g.size()];
-		Integer[] aurrekoa = new Integer[g.size()];
+		QueueImpl aztertuGabeak = new QueueImpl();
+		aztertuGabeak.add(hasiera);
 		ArrayList<String> bidea = new ArrayList<>();
 		/*
 		 * Hasieratu elementuak
 		 */
 		for(int i= 0; i<g.size() ; i++){
 			bisitatuak [i] = false;
-			aurrekoa [i] = -1;
 		}
-		
+		bisitatuak[hasiera] = true;
+		while(!erl && !aztertuGabeak.isEmpty()){
+			int unekoa = aztertuGabeak.remove();
+			if(unekoa == bukaera){
+				erl = true;
+			}else{
+				
+			}
+		}
 		
 		return erl;
 	}
