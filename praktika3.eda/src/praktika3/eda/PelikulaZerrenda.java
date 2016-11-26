@@ -26,6 +26,9 @@ public class PelikulaZerrenda {
 		}
 		return PelikulaZerrenda.nirePelikulaZerrenda;
 	}
+	public Map<String, Pelikula> getHashMap(){
+		return z1;
+	}
 	//pelikula berria zerrendan gehituko du
 	public void gehituPelikula(Pelikula p){
 		if(!PelikulaZerrenda.getPelikulaZerrenda().zerrendanDago(p.getIzenburua())){
