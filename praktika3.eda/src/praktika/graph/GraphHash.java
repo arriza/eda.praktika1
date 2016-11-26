@@ -21,9 +21,14 @@ public class GraphHash {
 		 * 		Adabegiak aktoreen izenak eta pelikulen izenburuak dira
 		 */
 		for(Map.Entry<String, Pelikula> entry : lPelikulak.getPelikulaZerrenda().getHashMap().entrySet()){
+			//Pelikularen izenburua eta bere aktoreak gehituko ditu grafora
 			ArrayList<String> zEm = new ArrayList<>();
 			zEm = osatuZerrenda(entry.getValue().getListaAktoreak());
-			g.put(entry.getKey(), zEm);		
+			g.put(entry.getKey(), zEm);
+			
+			//Pelikula horren aktoreak key gisa sartu eta haien adjList bete
+			adjSortu(entry.getValue());
+			
 		}
 			
 			
@@ -41,14 +46,49 @@ public class GraphHash {
 	}
 	public boolean erlazionatuta(String p1, String p2){
 		boolean erl = false;
+		int hasiera;
+		int bukaera;
+		boolean [] bisitatuak = new boolean[g.size()];
+		Integer[] aurrekoa = new Integer[g.size()];
+		ArrayList<String> bidea = new ArrayList<>();
+		/*
+		 * Hasieratu elementuak
+		 */
+		for(int i= 0; i<g.size() ; i++){
+			bisitatuak [i] = false;
+			aurrekoa [i] = -1;
+		}
+		hasiera = 
 		
 		return erl;
 	}
+	/*
+	 * Pelikula bateko adj zerrenda sortuko du
+	 */
 	private ArrayList<String> osatuZerrenda(ArrayList<Aktorea> lista){
 		ArrayList<String> z = new ArrayList<>();
 		for(int i = 0; i<lista.size() ; i++){
 			z.add(lista.get(i).getIzena());
 		}
 		return z;
+	}
+	/*
+	 * Aktore bateko adj zerrenda sortuko du
+	 */
+	private ArrayList<String> osatuZerrendaPelikulak(ArrayList<Pelikula> lista){
+		ArrayList<String> z = new ArrayList<>();
+		for(int i = 0; i<lista.size() ; i++){
+			z.add(lista.get(i).getIzenburua());
+		}
+		return z;
+	}
+	private void adjSortu(Pelikula p){
+		for(int i = 0; i<p.getListaAktoreak().size(); i++){
+			if(!g.containsKey(p.getListaAktoreak().get(i).getIzena())){
+				ArrayList<String> zEm = new ArrayList<>();
+				zEm = osatuZerrendaPelikulak(p.getListaAktoreak().get(i).getPelikulaLista());
+				g.put(p.getListaAktoreak().get(i).getIzena(), zEm);
+			}
+		}
 	}
 }
