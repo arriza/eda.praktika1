@@ -64,7 +64,12 @@ public class GraphHash {
 			if(unekoa == bukaera){
 				erl = true;
 			}else{
-				
+				for (Integer kidea : g.get(unekoa).get(unekoa)){
+					if(! bisitatuak[kidea]){
+						aztertuGabeak.add(kidea);
+						bisitatuak[kidea] = true;
+					}
+				}
 			}
 		}
 		
