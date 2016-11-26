@@ -46,8 +46,8 @@ public class GraphHash {
 	}
 	public boolean erlazionatuta(String p1, String p2){
 		boolean erl = false;
-		int hasiera;
-		int bukaera;
+		int hasiera = g.get(p1).indexOf(p1);
+		int bukaera = g.get(p2).indexOf(p2);
 		boolean [] bisitatuak = new boolean[g.size()];
 		Integer[] aurrekoa = new Integer[g.size()];
 		ArrayList<String> bidea = new ArrayList<>();
@@ -58,7 +58,7 @@ public class GraphHash {
 			bisitatuak [i] = false;
 			aurrekoa [i] = -1;
 		}
-		hasiera = 
+		
 		
 		return erl;
 	}
