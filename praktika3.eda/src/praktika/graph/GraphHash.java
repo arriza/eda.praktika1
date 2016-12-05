@@ -81,8 +81,44 @@ public class GraphHash {
 	}
 	
 	
-	
-	
+	public ArrayList<String> erlazioBidea(String p1, String p2){
+		ArrayList<String> bidea = new ArrayList<>();
+		boolean badago = false;
+		int [] aurrekoa = new int [g.size()];
+		if(p1.equals(p2)){
+			bidea.add(p1);
+			bidea.add(p2);
+			
+		}else{
+			Queue<String> aztGabeak = new LinkedList<>();
+			aztGabeak.add(p1);
+			HashSet<String> bisitatuak = new HashSet<>();
+			bisitatuak.add(p1);
+			bidea.add(p1);
+			while(!badago && !aztGabeak.isEmpty()){
+				String current = aztGabeak.poll();
+				if(current.equals(p2)){
+					badago = true;
+				}else{
+					for(String kidea: g.get(current)){
+						if(!bisitatuak.contains(kidea)){
+							aztGabeak.add(kidea);
+							bisitatuak.add(kidea);
+							bidea.add(kidea);
+							
+						}
+					}
+				}
+			}
+			
+		}
+		
+		if(badago){
+			return bidea;
+		}else{
+			return null;	
+		}
+	}
 	//GRAFOA SORTZEKO AZPIPROGRAMAK
 	/*
 	 * Pelikula bateko adj zerrenda sortuko du
@@ -105,12 +141,14 @@ public class GraphHash {
 		return z;
 	}
 	private void adjSortu(Pelikula p){
+		ArrayList<String> zEm = new ArrayList<>();
 		for(int i = 0; i<p.getListaAktoreak().size(); i++){
 			if(!g.containsKey(p.getListaAktoreak().get(i).getIzena())){
-				ArrayList<String> zEm = new ArrayList<>();
 				zEm = osatuZerrendaPelikulak(p.getListaAktoreak().get(i).getPelikulaLista());
 				g.put(p.getListaAktoreak().get(i).getIzena(), zEm);
 			}
+			
+			
 		}
 	}
 }
