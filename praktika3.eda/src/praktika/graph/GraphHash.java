@@ -2,8 +2,11 @@ package praktika.graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 
 import praktika3.eda.Aktorea;
 import praktika3.eda.Pelikula;
@@ -45,11 +48,42 @@ public class GraphHash {
 			System.out.println();
 		}
 	}
+	@SuppressWarnings("unchecked")
 	public boolean erlazionatuta(String p1, String p2){
-		boolean erl = false;
+		if(p1.equals(p2)){
+			return true;
+		}else{
+			boolean erl = false;
+			@SuppressWarnings("rawtypes")
+			Queue aztGabeak = new LinkedList<String>();
+			HashSet<String> bisitatuak = new HashSet<String>();
+			aztGabeak.add(p1);
+			bisitatuak.add(p1);
+			while(!erl && !aztGabeak.isEmpty()){
+				String current = aztGabeak.poll().toString();
+				if(current.equals(p2)){
+					erl = true;
+				}else{
+					for(String kidea: g.get(current)){
+						if(!bisitatuak.contains(kidea)){
+							aztGabeak.add(kidea);
+							bisitatuak.add(kidea);
+						}
+					}
+				}
+			}
+			return erl;
+		}
 		
-		return erl;
+		
+		
+		
 	}
+	
+	
+	
+	
+	//GRAFOA SORTZEKO AZPIPROGRAMAK
 	/*
 	 * Pelikula bateko adj zerrenda sortuko du
 	 */

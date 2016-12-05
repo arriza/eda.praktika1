@@ -13,7 +13,11 @@ public class MainProbaGrafoa {
 		g.grafoaSortu(PelikulaZerrenda.getPelikulaZerrenda());
 		g.print();
 		System.out.println("Grafoa eraikia! :), emandako denbora --> "+timer.elapsedTime());
-
+		System.out.println("==============================================================");
+		
+		System.out.println("Erlazionatuta daude Devon, Tony eta Einsatz in 4 W nden ???? ");
+		System.out.println(g.erlazionatuta("Devon, Tony", "Einsatz in 4 W nden"));
+		System.out.println("Erlazioa aurkitzeko emandako denbora --> "+timer.elapsedTime());
 	}
 
 }
