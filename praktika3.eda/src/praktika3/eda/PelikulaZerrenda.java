@@ -7,6 +7,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
+
+
 public class PelikulaZerrenda {
 	
 	//private ArrayList<Aktorea> zerrenda;
