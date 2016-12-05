@@ -20,7 +20,7 @@ public class GraphHash {
 	}
 	
 	public void grafoaSortu(PelikulaZerrenda lPelikulak){
-		/*
+		/* Aurre: kargatutako zerrenda ez da hutsa
 		 * Post: Pelikulen zerrendatik grafoa sortzen du
 		 * 		Adabegiak aktoreen izenak eta pelikulen izenburuak dira
 		 */
@@ -48,6 +48,9 @@ public class GraphHash {
 		
 	}
 	public void print(){
+		/*Aurrebaldintza: grafoa ez da hutsa
+		 * Postbaldintza: grafoan dauden elementuak pantailaratuko dira
+		 */
 		int i = 1;
 		for (String s:g.keySet()){
 			System.out.println("Element: "+ i++ + " "+ s + "--> ");
@@ -59,6 +62,11 @@ public class GraphHash {
 	}
 	@SuppressWarnings("unchecked")
 	public boolean erlazionatuta(String p1, String p2){
+		/*
+		 * Aurrebaldintza: grafoa ez da hutsa
+		 * Postbaldintza: bi elementu erlazionatuta dauden
+		 *  edo ez esango digu
+		 */
 		if(p1.equals(p2)){
 			return true;
 		}else{
@@ -91,6 +99,11 @@ public class GraphHash {
 	
 	
 	public ArrayList<String> erlazioBidea(String p1, String p2){
+			/*
+			 * Aurrebaldintza: grafoa ez da hutsa
+			 * Postbaldintza: bi elementu erlazionatuta badaude
+			 * haien artean dagoen "bidea" pantailaratuko da
+			 */
 		ArrayList<String> bidea = new ArrayList<>();
 		boolean badago = false;
 		int [] aurrekoa = new int [g.size()];

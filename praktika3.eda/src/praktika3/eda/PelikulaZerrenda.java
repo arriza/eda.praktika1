@@ -95,7 +95,6 @@ public class PelikulaZerrenda {
 			String [] aktore = null;
 			Pelikula p = null;
 			Aktorea a = null;
-			//String 
 			try{
 				 Scanner entrada = new Scanner(new FileReader(nomF));
 				 FileReader f = new FileReader(nomF);
@@ -111,7 +110,6 @@ public class PelikulaZerrenda {
 				PelikulaZerrenda.getPelikulaZerrenda().gehituPelikula(p);
 				aktore = peli[1].split("\\s&&&\\s");
 				for(int i = 0; i<aktore.length;i++){
-					//System.out.println(aktore[i]);
 					a = new Aktorea(aktore[i]);
 					p.gehituAktorea(a);
 					
@@ -122,6 +120,7 @@ public class PelikulaZerrenda {
 					}else{
 						//aktorea badago zerrendan pelikula gehitzen diogu bere zerrendari
 						AktoreZerrenda.getAktoreZerrenda().gehitu(p, aktore[i]);
+						//System.out.println(p.getIzenburua());
 						
 					}
 				}
