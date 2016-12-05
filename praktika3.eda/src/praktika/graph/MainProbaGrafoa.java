@@ -20,6 +20,7 @@ public class MainProbaGrafoa {
 		System.out.println("Erlazioa aurkitzeko emandako denbora --> "+timer.elapsedTime());
 		
 		System.out.println(g.erlazioBidea("Casino", "A team"));
+		
 	}
 
 }

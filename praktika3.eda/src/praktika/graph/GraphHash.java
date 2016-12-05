@@ -29,10 +29,19 @@ public class GraphHash {
 			ArrayList<String> zEm = new ArrayList<>();
 			zEm = osatuZerrenda(entry.getValue().getListaAktoreak());
 			g.put(entry.getKey(), zEm);
+			//System.out.println(entry.getKey()+"-ren aktoreak");
 			
 			//Pelikula horren aktoreak key gisa sartu eta haien adjList bete
-			adjSortu(entry.getValue());
-			
+			//adjSortu(entry.getValue());
+			for(int a = 0; a<entry.getValue().aktoreKopurua() ; a++){
+				if(!g.containsKey(entry.getValue().getListaAktoreak().get(a))){
+					ArrayList<String> zpeli = new ArrayList<>();
+					for(int p = 0; p<entry.getValue().getListaAktoreak().get(a).pelikulaKopurua() ; p++){
+						zpeli.add(entry.getValue().getListaAktoreak().get(a).getPelikulaLista().get(p).getIzenburua());
+					}
+					g.put(entry.getValue().getListaAktoreak().get(a).getIzena(), zpeli);
+				}
+			}
 		}
 			
 			
@@ -137,12 +146,14 @@ public class GraphHash {
 		ArrayList<String> z = new ArrayList<>();
 		for(int i = 0; i<lista.size() ; i++){
 			z.add(lista.get(i).getIzenburua());
+			System.out.println(lista.get(i).getIzenburua());
 		}
 		return z;
 	}
 	private void adjSortu(Pelikula p){
 		ArrayList<String> zEm = new ArrayList<>();
 		for(int i = 0; i<p.getListaAktoreak().size(); i++){
+			System.out.println("Aktorea: "+p.getListaAktoreak().get(i).getIzena()+" bere pelikulak");
 			if(!g.containsKey(p.getListaAktoreak().get(i).getIzena())){
 				zEm = osatuZerrendaPelikulak(p.getListaAktoreak().get(i).getPelikulaLista());
 				g.put(p.getListaAktoreak().get(i).getIzena(), zEm);
