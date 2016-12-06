@@ -78,6 +78,7 @@ public class GraphHash {
 			bisitatuak.add(p1);
 			while(!erl && !aztGabeak.isEmpty()){
 				String current = aztGabeak.poll().toString();
+				for(int i=0; i<aztGabeak.size(); i++){
 				if(current.equals(p2)){
 					erl = true;
 				}else{
@@ -87,14 +88,10 @@ public class GraphHash {
 							bisitatuak.add(kidea);
 						}
 					}
-				}
+				}}
 			}
 			return erl;
 		}
-		
-		
-		
-		
 	}
 	
 	

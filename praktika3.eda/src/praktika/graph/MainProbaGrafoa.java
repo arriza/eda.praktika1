@@ -15,11 +15,11 @@ public class MainProbaGrafoa {
 		System.out.println("Grafoa eraikia! :), emandako denbora --> "+timer.elapsedTime());
 		System.out.println("==============================================================");
 		
-		System.out.println("Erlazionatuta daude Casino eta A team ???? ");
-		System.out.println(g.erlazionatuta("Godfather", "F&F"));
+		System.out.println("Erlazionatuta daude Seven eta A team ???? ");
+		System.out.println(g.erlazionatuta("Seven", "A team"));
 		System.out.println("Erlazioa aurkitzeko emandako denbora --> "+timer.elapsedTime());
 		
-		System.out.println(g.erlazioBidea("Godfather", "F&F"));
+		System.out.println(g.erlazioBidea("Seven", "A team"));
 		System.out.println("Erlazioaren bidea aurkitzeko emandako denbora --> "+timer.elapsedTime());
 	}
 
