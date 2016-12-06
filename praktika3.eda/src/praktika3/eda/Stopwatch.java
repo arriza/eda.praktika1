@@ -1,3 +1,4 @@
+package praktika3.eda;
 /*************************************************************************
  *  Compilation:  javac Stopwatch.java
  *
@@ -13,7 +14,6 @@
  *  by Robert Sedgewick and Kevin Wayne.
  */
 
-package praktika3.eda;
 
 public class Stopwatch { 
 

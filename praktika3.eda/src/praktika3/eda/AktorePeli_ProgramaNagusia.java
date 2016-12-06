@@ -1,5 +1,6 @@
 package praktika3.eda;
 
+
 import java.util.Scanner;
 
 public class AktorePeli_ProgramaNagusia {
