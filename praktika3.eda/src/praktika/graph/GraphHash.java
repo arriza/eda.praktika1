@@ -19,12 +19,13 @@ public class GraphHash {
 		g = new HashMap<String, ArrayList<String>>();
 	}
 	
-	public void grafoaSortu(PelikulaZerrenda lPelikulak){
+	@SuppressWarnings("static-access")
+	public void grafoaSortu(){
 		/* Aurre: kargatutako zerrenda ez da hutsa
 		 * Post: Pelikulen zerrendatik grafoa sortzen du
 		 * 		Adabegiak aktoreen izenak eta pelikulen izenburuak dira
 		 */
-		for(Map.Entry<String, Pelikula> entry : lPelikulak.getPelikulaZerrenda().getHashMap().entrySet()){
+		for(Map.Entry<String, Pelikula> entry : PelikulaZerrenda.getPelikulaZerrenda().getHashMap().entrySet()){
 			//Pelikularen izenburua eta bere aktoreak gehituko ditu grafora
 			ArrayList<String> zEm = new ArrayList<>();
 			zEm = osatuZerrenda(entry.getValue().getListaAktoreak());
@@ -34,11 +35,19 @@ public class GraphHash {
 			//Pelikula horren aktoreak key gisa sartu eta haien adjList bete
 			//adjSortu(entry.getValue());
 			for(int a = 0; a<entry.getValue().aktoreKopurua() ; a++){
-				if(!g.containsKey(entry.getValue().getListaAktoreak().get(a))){
+				Aktorea ak = entry.getValue().getListaAktoreak().get(a);
+				System.out.println(ak.pelikulaKopurua());
+				if(!g.containsKey(ak.getIzena())){
 					ArrayList<String> zpeli = new ArrayList<>();
-					for(int p = 0; p<entry.getValue().getListaAktoreak().get(a).pelikulaKopurua() ; p++){
+					/*for(int p = 0; p<entry.getValue().getListaAktoreak().get(a).pelikulaKopurua() ; p++){
 						zpeli.add(entry.getValue().getListaAktoreak().get(a).getPelikulaLista().get(p).getIzenburua());
+					}*/
+					Iterator<Pelikula> it = ak.getIteradore();
+					while(it.hasNext()){
+						Pelikula p = it.next();
+						zpeli.add(p.getIzenburua());
 					}
+					inprimatuP(zpeli);
 					g.put(entry.getValue().getListaAktoreak().get(a).getIzena(), zpeli);
 				}
 			}
@@ -78,7 +87,7 @@ public class GraphHash {
 			bisitatuak.add(p1);
 			while(!erl && !aztGabeak.isEmpty()){
 				String current = aztGabeak.poll().toString();
-				for(int i=0; i<aztGabeak.size(); i++){
+				//for(int i=0; i<aztGabeak.size(); i++){
 				if(current.equals(p2)){
 					erl = true;
 				}else{
@@ -88,7 +97,8 @@ public class GraphHash {
 							bisitatuak.add(kidea);
 						}
 					}
-				}}
+				}
+				//}
 			}
 			return erl;
 		}
@@ -170,6 +180,11 @@ public class GraphHash {
 			}
 			
 			
+		}
+	}
+	private void inprimatuP(ArrayList<String> peli){
+		for(int i=0 ; i<peli.size();i++){
+			System.out.println(peli.get(i));
 		}
 	}
 }

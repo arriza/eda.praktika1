@@ -40,11 +40,13 @@ public class AktoreZerrenda {
 	public int sizeHM(){
 		return z1.size();
 	}
-	public void badagoZerrendan(String izenOsoa){
+	public Aktorea badagoZerrendan(String izenOsoa){
 		if(zerrendanDago(izenOsoa)){
 			System.out.println(izenOsoa+" aktorea badago zerrendan! :)");
+			return AktoreZerrenda.getAktoreZerrenda().z1.get(izenOsoa);
 		}else{
 			System.out.println(izenOsoa+" ez da aurkitu zerrendan... :(");
+			return null;
 		}
 		
 	}

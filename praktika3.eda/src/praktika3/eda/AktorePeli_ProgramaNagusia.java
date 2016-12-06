@@ -3,6 +3,8 @@ package praktika3.eda;
 
 import java.util.Scanner;
 
+import praktika.graph.GraphHash;
+
 public class AktorePeli_ProgramaNagusia {
 
 	private static Stopwatch timer;
@@ -121,6 +123,7 @@ public class AktorePeli_ProgramaNagusia {
 			zerrendaOrdenatua();
 			break;
 		case 8:
+			
 			System.out.println("Programa amaitu da :(");
 			System.exit(0);
 		default:
@@ -196,5 +199,6 @@ public class AktorePeli_ProgramaNagusia {
 		AktoreZerrenda.getAktoreZerrenda().hasieratu();
 		PelikulaZerrenda.getPelikulaZerrenda().hasieratu();
 	}
+	
 }
 

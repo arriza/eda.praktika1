@@ -2,6 +2,7 @@ package praktika3.eda;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Aktorea {
 	//Atributuak
@@ -40,11 +41,15 @@ public class Aktorea {
 		}
 		
 		public int pelikulaKopurua() {
+			System.out.println("Pelikula kopu: "+this.listaPelikulak.size());
 			return this.listaPelikulak.size();
 		}
 		
 		public int compareTo(Aktorea akt) {
 			return this.izenOsoa.compareTo(akt.izenOsoa);
+		}
+		public Iterator<Pelikula> getIteradore(){
+			return listaPelikulak.iterator();
 		}
 
 		@Override
