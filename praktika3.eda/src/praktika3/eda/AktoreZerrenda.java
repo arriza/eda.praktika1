@@ -112,6 +112,7 @@ public class AktoreZerrenda {
 		if(a1 == null){
 			System.out.println("Ez dago aktore hori!!");
 		}else{
+			System.out.println(izenOsoa+" aktorearen pelikulak:");
 			a1.pelikulakInprimatu();
 		}
 	}

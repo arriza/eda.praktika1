@@ -6,8 +6,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Queue;
 
+import praktika3.eda.AktoreZerrenda;
 import praktika3.eda.Aktorea;
 import praktika3.eda.Pelikula;
 import praktika3.eda.PelikulaZerrenda;
@@ -29,19 +31,20 @@ public class GraphHash {
 			ArrayList<String> zEm = new ArrayList<>();
 			zEm = osatuZerrenda(entry.getValue().getListaAktoreak());
 			g.put(entry.getKey(), zEm);
-			//System.out.println(entry.getKey()+"-ren aktoreak");
-			
 			//Pelikula horren aktoreak key gisa sartu eta haien adjList bete
-			//adjSortu(entry.getValue());
+			
 			for(int a = 0; a<entry.getValue().aktoreKopurua() ; a++){
-				Aktorea ak = entry.getValue().getListaAktoreak().get(a);
+				AktoreZerrenda.getAktoreZerrenda().pelikulakImprimatu(entry.getValue().getListaAktoreak().get(a).getIzena());
+				ArrayList<String> zpeli = new ArrayList<>();
+				/*Aktorea ak = entry.getValue().getListaAktoreak().get(a);
 				if(!g.containsKey(ak.getIzena())){
 					ArrayList<String> zpeli = new ArrayList<>();
 					for(int p = 0; p<entry.getValue().getListaAktoreak().get(a).pelikulaKopurua() ; p++){
 						zpeli.add(entry.getValue().getListaAktoreak().get(a).getPelikulaLista().get(p).getIzenburua());
-					}
-					g.put(entry.getValue().getListaAktoreak().get(a).getIzena(), zpeli);
-				}
+					}*/
+				zpeli = osatuZerrendaPelikulak(entry.getValue().getListaAktoreak().get(a).getPelikulaLista());
+				g.put(entry.getValue().getListaAktoreak().get(a).getIzena(), zpeli);
+				//}
 			}
 		}
 			
@@ -118,16 +121,14 @@ public class GraphHash {
 			bidea.add(p1);
 			while(!badago && !aztGabeak.isEmpty()){
 				String current = aztGabeak.poll();
-				bisitatuak.add(current);
 				if(current.equals(p2)){
 					badago = true;
 				}else{
 					for(String kidea: g.get(current)){
 						if(!bisitatuak.contains(kidea)){
 							aztGabeak.add(kidea);
-							
-							bidea.add(kidea);
-							
+							bisitatuak.add(kidea);
+							bidea.add(kidea);	
 						}
 					}
 				}
@@ -176,9 +177,22 @@ public class GraphHash {
 			
 		}
 	}
-	private void inprimatuP(ArrayList<String> peli){
-		for(int i=0 ; i<peli.size();i++){
-			System.out.println(peli.get(i));
+	
+	public void sortu(){
+		Iterator<Entry<String, Pelikula>> itP = PelikulaZerrenda.getPelikulaZerrenda().getIteradorea();
+		while(itP.hasNext()){
+			Pelikula p = itP.next().getValue();
+			ArrayList<String> zAkt = new ArrayList<>();
+			zAkt = osatuZerrenda(p.getListaAktoreak());
+			g.put(p.getIzenburua(), zAkt);
 		}
+		Iterator<Entry<String, Aktorea>> itA = AktoreZerrenda.getAktoreZerrenda().getIteradorea();
+		while(itA.hasNext()){
+			Aktorea ak = itA.next().getValue();
+			ArrayList<String> zPeli = new ArrayList<>();
+			zPeli = osatuZerrendaPelikulak(ak.getPelikulaLista());
+			g.put(ak.getIzena(), zPeli);
+		}
+		
 	}
 }
