@@ -15,6 +15,7 @@ public class MainProbaGrafoa {
 		//AktoreZerrenda.getAktoreZerrenda().imprimatuZerrenda();
 		GraphHash g = new GraphHash();
 		g.sortu();
+		//g.grafoaSortu();
 		g.print();
 		System.out.println("Grafoa eraikia! :), emandako denbora --> "+timer.elapsedTime());
 		System.out.println("==============================================================");
@@ -23,8 +24,8 @@ public class MainProbaGrafoa {
 		//System.out.println(g.erlazionatuta("Casino", "A team"));
 		//System.out.println("Erlazioa aurkitzeko emandako denbora --> "+timer.elapsedTime());
 		
-		System.out.println(g.erlazioBidea("Casino", "A team"));
-		//System.out.println("Erlazioaren bidea aurkitzeko emandako denbora --> "+timer.elapsedTime());
+		System.out.println(g.erlazioBidea("F&F", "Godfather"));
+		System.out.println("Erlazioaren bidea aurkitzeko emandako denbora --> "+timer.elapsedTime());
 	}
 
 }

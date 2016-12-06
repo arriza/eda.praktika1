@@ -4,6 +4,7 @@ package praktika3.eda;
 
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Pelikula {
 	//Atributuak
@@ -47,6 +48,9 @@ public class Pelikula {
 			for(int i = 0; i<this.getListaAktoreak().size(); i++){
 				System.out.println(this.getListaAktoreak().get(i).getIzena());
 			}
+		}
+		public Iterator<Aktorea> getIterator(){
+			return listaAktoreak.iterator();
 		}
 		@Override
 		public int hashCode() {

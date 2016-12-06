@@ -26,7 +26,28 @@ public class GraphHash {
 		 * Post: Pelikulen zerrendatik grafoa sortzen du
 		 * 		Adabegiak aktoreen izenak eta pelikulen izenburuak dira
 		 */
-		for(Map.Entry<String, Pelikula> entry : PelikulaZerrenda.getPelikulaZerrenda().getHashMap().entrySet()){
+		Iterator<Entry<String, Pelikula>> itP = PelikulaZerrenda.getPelikulaZerrenda().getIteradorea();
+		while(itP.hasNext()){
+			Pelikula p = itP.next().getValue();
+			ArrayList<String> zEm = new ArrayList<>();
+			zEm = osatuZerrenda(p.getListaAktoreak());
+			g.put(p.getIzenburua(), zEm);
+			Iterator<Aktorea> itA = p.getIterator();
+			while(itA.hasNext()){
+				Aktorea a = itA.next();
+				
+				if(g.get(a.getIzena())==null){
+				ArrayList<String> zPeli = new ArrayList<>();
+				Iterator<Pelikula> itPel = a.getIteradore();
+				while(itPel.hasNext()){
+					Pelikula pA = itPel.next();
+					zPeli.add(p.getIzenburua());
+				}
+				//zPeli = osatuZerrendaPelikulak(a.getPelikulaLista());
+				g.put(a.getIzena(), zPeli);
+			}}
+		}
+		/*for(Map.Entry<String, Pelikula> entry : PelikulaZerrenda.getPelikulaZerrenda().getHashMap().entrySet()){
 			//Pelikularen izenburua eta bere aktoreak gehituko ditu grafora
 			ArrayList<String> zEm = new ArrayList<>();
 			zEm = osatuZerrenda(entry.getValue().getListaAktoreak());
@@ -42,11 +63,11 @@ public class GraphHash {
 					for(int p = 0; p<entry.getValue().getListaAktoreak().get(a).pelikulaKopurua() ; p++){
 						zpeli.add(entry.getValue().getListaAktoreak().get(a).getPelikulaLista().get(p).getIzenburua());
 					}*/
-				zpeli = osatuZerrendaPelikulak(entry.getValue().getListaAktoreak().get(a).getPelikulaLista());
+				/*zpeli = osatuZerrendaPelikulak(entry.getValue().getListaAktoreak().get(a).getPelikulaLista());
 				g.put(entry.getValue().getListaAktoreak().get(a).getIzena(), zpeli);
 				//}
 			}
-		}
+		}*/
 			
 			
 		
@@ -108,7 +129,6 @@ public class GraphHash {
 			 */
 		ArrayList<String> bidea = new ArrayList<>();
 		boolean badago = false;
-		int [] aurrekoa = new int [g.size()];
 		if(p1.equals(p2)){
 			bidea.add(p1);
 			bidea.add(p2);
@@ -118,17 +138,18 @@ public class GraphHash {
 			aztGabeak.add(p1);
 			HashSet<String> bisitatuak = new HashSet<>();
 			bisitatuak.add(p1);
-			bidea.add(p1);
+			//bidea.add(p1);
 			while(!badago && !aztGabeak.isEmpty()){
 				String current = aztGabeak.poll();
 				if(current.equals(p2)){
 					badago = true;
+					bidea.add(current);
 				}else{
 					for(String kidea: g.get(current)){
 						if(!bisitatuak.contains(kidea)){
 							aztGabeak.add(kidea);
 							bisitatuak.add(kidea);
-							bidea.add(kidea);	
+							
 						}
 					}
 				}
@@ -137,6 +158,7 @@ public class GraphHash {
 		}
 		
 		if(badago){
+			
 			return bidea;
 		}else{
 			return null;	
@@ -161,7 +183,7 @@ public class GraphHash {
 		ArrayList<String> z = new ArrayList<>();
 		for(int i = 0; i<lista.size() ; i++){
 			z.add(lista.get(i).getIzenburua());
-			System.out.println(lista.get(i).getIzenburua());
+			//System.out.println(lista.get(i).getIzenburua());
 		}
 		return z;
 	}
