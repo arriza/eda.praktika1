@@ -19,7 +19,6 @@ public class GraphHash {
 		g = new HashMap<String, ArrayList<String>>();
 	}
 	
-	@SuppressWarnings("static-access")
 	public void grafoaSortu(){
 		/* Aurre: kargatutako zerrenda ez da hutsa
 		 * Post: Pelikulen zerrendatik grafoa sortzen du
@@ -36,18 +35,11 @@ public class GraphHash {
 			//adjSortu(entry.getValue());
 			for(int a = 0; a<entry.getValue().aktoreKopurua() ; a++){
 				Aktorea ak = entry.getValue().getListaAktoreak().get(a);
-				System.out.println(ak.pelikulaKopurua());
 				if(!g.containsKey(ak.getIzena())){
 					ArrayList<String> zpeli = new ArrayList<>();
-					/*for(int p = 0; p<entry.getValue().getListaAktoreak().get(a).pelikulaKopurua() ; p++){
+					for(int p = 0; p<entry.getValue().getListaAktoreak().get(a).pelikulaKopurua() ; p++){
 						zpeli.add(entry.getValue().getListaAktoreak().get(a).getPelikulaLista().get(p).getIzenburua());
-					}*/
-					Iterator<Pelikula> it = ak.getIteradore();
-					while(it.hasNext()){
-						Pelikula p = it.next();
-						zpeli.add(p.getIzenburua());
 					}
-					inprimatuP(zpeli);
 					g.put(entry.getValue().getListaAktoreak().get(a).getIzena(), zpeli);
 				}
 			}
@@ -126,13 +118,14 @@ public class GraphHash {
 			bidea.add(p1);
 			while(!badago && !aztGabeak.isEmpty()){
 				String current = aztGabeak.poll();
+				bisitatuak.add(current);
 				if(current.equals(p2)){
 					badago = true;
 				}else{
 					for(String kidea: g.get(current)){
 						if(!bisitatuak.contains(kidea)){
 							aztGabeak.add(kidea);
-							bisitatuak.add(kidea);
+							
 							bidea.add(kidea);
 							
 						}
@@ -148,6 +141,7 @@ public class GraphHash {
 			return null;	
 		}
 	}
+	
 	//GRAFOA SORTZEKO AZPIPROGRAMAK
 	/*
 	 * Pelikula bateko adj zerrenda sortuko du

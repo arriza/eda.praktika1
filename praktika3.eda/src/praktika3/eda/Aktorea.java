@@ -41,7 +41,6 @@ public class Aktorea {
 		}
 		
 		public int pelikulaKopurua() {
-			System.out.println("Pelikula kopu: "+this.listaPelikulak.size());
 			return this.listaPelikulak.size();
 		}
 		

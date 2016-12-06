@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Map.Entry;
 
 
 
@@ -88,6 +89,9 @@ public class PelikulaZerrenda {
 		for (Pelikula key : z1.values()) {
 	        key.kenduAktorea(izenOsoa);
 	    }
+	}
+	public Iterator<Entry<String, Pelikula>> getIteradorea(){
+		return z1.entrySet().iterator();
 	}
 	//fitxategitik datuak atera
 		@SuppressWarnings({ "resource", "unused" })
