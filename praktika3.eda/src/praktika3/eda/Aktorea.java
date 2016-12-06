@@ -33,7 +33,7 @@ public class Aktorea {
 			 * 
 			 */
 			int i;
-			for (i=0;i==this.listaPelikulak.size()-1;i++) {
+			for (i=0;i<=this.listaPelikulak.size()-1;i++) {
 				System.out.println(this.listaPelikulak.get(i).getIzenburua());
 			}
 		}
