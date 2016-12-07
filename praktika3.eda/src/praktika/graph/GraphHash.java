@@ -148,7 +148,7 @@ public class GraphHash {
 					for(String kidea: g.get(current)){
 						if(!bisitatuak.contains(kidea)){
 							aztGabeak.add(kidea);
-							bisitatuak.add(kidea);
+							bisitatuak.add(current);
 							
 						}
 					}
@@ -201,6 +201,10 @@ public class GraphHash {
 	}
 	
 	public void sortu(){
+		/*
+		 * Fitxategitik sortutako egitura berrietatik
+		 * erlazioen grafoa sortuko du
+		 */
 		Iterator<Entry<String, Pelikula>> itP = PelikulaZerrenda.getPelikulaZerrenda().getIteradorea();
 		while(itP.hasNext()){
 			Pelikula p = itP.next().getValue();

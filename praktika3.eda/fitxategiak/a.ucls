@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="praktika3.eda.AktoreZerrenda" project="praktika3.eda" 
     file="/praktika3.eda/src/praktika3/eda/AktoreZerrenda.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="315" width="253" x="30" y="46"/>    
+    <position height="315" width="253" x="148" y="21"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,110 +12,84 @@
   </class>  
   <class id="2" language="java" name="praktika3.eda.Pelikula" project="praktika3.eda" 
     file="/praktika3.eda/src/praktika3/eda/Pelikula.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="279" width="213" x="30" y="740"/>    
+    <position height="297" width="213" x="148" y="733"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="praktika3.eda.Stopwatch" project="praktika3.eda" 
-    file="/praktika3.eda/src/praktika3/eda/Stopwatch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="129" x="534" y="411"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="praktika3.eda.AktorePeli_ProgramaNagusia" project="praktika3.eda" 
-    file="/praktika3.eda/src/praktika3/eda/AktorePeli_ProgramaNagusia.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="279" width="193" x="486" y="46"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="praktika3.eda.Aktorea" project="praktika3.eda" 
+  <class id="3" language="java" name="praktika3.eda.Aktorea" project="praktika3.eda" 
     file="/praktika3.eda/src/praktika3/eda/Aktorea.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="202" x="30" y="411"/>    
+    <position height="261" width="202" x="148" y="386"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="praktika3.eda.Main" project="praktika3.eda" 
-    file="/praktika3.eda/src/praktika3/eda/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="333" y="46"/>    
+  <class id="4" language="java" name="praktika.graph.GraphHash" project="praktika3.eda" 
+    file="/praktika3.eda/src/praktika/graph/GraphHash.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="326" x="451" y="21"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="praktika3.eda.PelikulaZerrenda" project="praktika3.eda" 
+  <class id="5" language="java" name="praktika3.eda.PelikulaZerrenda" project="praktika3.eda" 
     file="/praktika3.eda/src/praktika3/eda/PelikulaZerrenda.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="279" width="212" x="272" y="411"/>    
+    <position height="297" width="250" x="390" y="386"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="8">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="9" name="listaAktoreak"/>      
-      <multiplicity id="10" minimum="0" maximum="2147483647"/>    
+  <association id="6">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="7" name="nirePelikulaZerrenda"/>      
+      <multiplicity id="8" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="11">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="12" name="z1"/>      
-      <multiplicity id="13" minimum="0" maximum="2147483647"/>    
+  <association id="9">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="10" name="listaPelikulak"/>      
+      <multiplicity id="11" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="14">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="15" name="listaPelikulak"/>      
-      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="17">    
+  <association id="12">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="18" name="nireAktoreZerrenda"/>      
-      <multiplicity id="19" minimum="0" maximum="1"/>    
+      <attribute id="13" name="nireAktoreZerrenda"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="20">    
+  <association id="15">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="21" name="z1"/>      
-      <multiplicity id="22" minimum="0" maximum="2147483647"/>    
+      <attribute id="16" name="z1"/>      
+      <multiplicity id="17" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="24" name="nirePelikulaZerrenda"/>      
-      <multiplicity id="25" minimum="0" maximum="1"/>    
+  <association id="18">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="19" name="z1"/>      
+      <multiplicity id="20" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="26">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="27" name="timer"/>      
-      <multiplicity id="28" minimum="0" maximum="1"/>    
+  <association id="21">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="22" name="listaAktoreak"/>      
+      <multiplicity id="23" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
