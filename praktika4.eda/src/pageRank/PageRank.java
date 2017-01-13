@@ -1,4 +1,4 @@
-package praktika4.eda;
+package pageRank;
 
 public class PageRank {
 
