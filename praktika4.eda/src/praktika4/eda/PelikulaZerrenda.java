@@ -13,8 +13,6 @@ import java.util.Map.Entry;
 
 public class PelikulaZerrenda {
 	
-	//private ArrayList<Aktorea> zerrenda;
-	
 	private static PelikulaZerrenda nirePelikulaZerrenda= null;
 	private Map<String,Pelikula> z1;
 	

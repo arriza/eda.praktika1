@@ -11,6 +11,7 @@ public class Pelikula {
 	
 		private String izenburua;
 		private ArrayList<Aktorea> listaAktoreak = new ArrayList<Aktorea>();
+		private double nPageRank;
 		
 		public Pelikula(String izenburua){
 			this.izenburua=izenburua;
@@ -23,6 +24,13 @@ public class Pelikula {
 			if(!badagoAktorea(akt)){
 				this.listaAktoreak.add(akt);
 			}
+		}
+		/*nodo bakoitzak haren PageRank -eko balioa gordeko du*/
+		public double getNpageRank(){
+			return nPageRank;
+		}
+		public void setNpageRank(double pr){
+			nPageRank = pr;
 		}
 		public boolean badagoAktorea(Aktorea a){
 			return this.listaAktoreak.contains(a);
