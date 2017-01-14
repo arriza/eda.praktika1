@@ -8,7 +8,6 @@ public class Aktorea {
 	//Atributuak
 		private String izenOsoa;
 		private ArrayList<Pelikula> listaPelikulak=new ArrayList<Pelikula>();
-		private double nPageRank;
 		
 		//Eraikitzailea
 		
@@ -26,13 +25,6 @@ public class Aktorea {
 
 		public void gehituPelikula(Pelikula peli) {
 			this.listaPelikulak.add(peli);
-		}
-		/*nodo bakoitzak haren PageRank -eko balioa gordeko du*/
-		public double getNpageRank(){
-			return nPageRank;
-		}
-		public void setNpageRank(double pr){
-			nPageRank = pr;
 		}
 		public void pelikulakInprimatu() {
 			/*
