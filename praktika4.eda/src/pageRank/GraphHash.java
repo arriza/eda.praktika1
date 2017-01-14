@@ -1,4 +1,4 @@
-package praktika4.eda;
+package pageRank;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +7,12 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import praktika4.eda.AktoreZerrenda;
+import praktika4.eda.Aktorea;
+import praktika4.eda.Pelikula;
+import praktika4.eda.PelikulaZerrenda;
+
 import java.util.Queue;
 
 
