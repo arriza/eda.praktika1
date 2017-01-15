@@ -12,9 +12,11 @@ public class PageRank_PNagusia {
 		PelikulaZerrenda.getPelikulaZerrenda().zerrendaKargatu(nomF);
 		PageRank pr = new PageRank();
 		pr.aktoreenErlazioak();
-		//pr.printErlazioak();
+		System.out.println("Aktoreen arten dauden erlazioak eraikita! :), emandako denbora --> "+timer.elapsedTime());
 		pr.pRank();
+		System.out.println("PageRank balioak kalkulatuta! :), emandako denbora --> "+timer.elapsedTime());
 		pr.pageRankOrdenatua();
+		System.out.println("Zerrenda ordenatua eraikia! :), emandako denbora --> "+timer.elapsedTime());
 
 	}
 

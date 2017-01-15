@@ -43,6 +43,11 @@ public class PageRank {
 	 * aktoreen arteko erlazioen grafoa sortuko du
 	 */
 	public void aktoreenErlazioak(){
+		/*
+		 * Aurre: kargatutako zerrenda ez da hutsa
+		 * Post: Aktoreen artean dauden erlazioen grafoa sortuko du eta 
+		 * pageRank balioak gordetzen dituen grafoa hasieratuko du
+		 */
 		GraphHash grafoa = new GraphHash();
 		grafoa.sortu();
 		double pr = 1.0/((double)AktoreZerrenda.getAktoreZerrenda().sizeHM());
@@ -57,8 +62,7 @@ public class PageRank {
 					if(!unekoAk.getIzena().equals(ak.getIzena())){
 						if(grafoa.erlazionatuta(unekoAk.getIzena(),ak.getIzena())){
 							unekoErlazioak.add(ak.getIzena());
-							/*//hasieratu pagerank guztiak probabilitate berdina izango dute
-							ak.setNpageRank(1/AktoreZerrenda.getAktoreZerrenda().sizeHM());*/
+							/*//hasieratu pagerank guztiak probabilitate berdina izango dute*/
 							aktoreenErlazioak.put(unekoAk.getIzena(), unekoErlazioak);
 							//bueltatuko den page rank taula hasieratu aktore guztientzat balio berdinarekin
 							pageRankAk.put(unekoAk.getIzena(), pr);
@@ -74,10 +78,13 @@ public class PageRank {
 		/*
 		 * Aktore bakoitzeko bere pageRank kalkulatuko duen algoritmoa
 		 * informazioa HashMap batean gordeko da
+		 * Aurre: Aktore bakoitzaren PageRank balioa hasierako balio
+		 * batekin hasieratuta egon behar da eta aktoreen erlazioak gordetzen
+		 * dituen datu egitura ez da hutsa izango
+		 * POST: emaitza aktore zerrendaren aktore bakoitzaren PageRank algoritmoaren
+		balioa da
 		 */
-		//POST: emaitza aktore zerrendaren aktore bakoitzaren PageRank algoritmoaren
-		//balioa da
-		int iterazioKop = 10;
+		int iterazioKop = 200;
 		while (iterazioKop>=0){
 			//aktoreenErlazioak taulan sortutako erlazioen pagerank kalkulatuko da
 			for(Map.Entry<String, ArrayList<String>> entry: aktoreenErlazioak.entrySet()){
@@ -97,6 +104,7 @@ public class PageRank {
 	}
 	
 	public ArrayList<String> pageRankOrdenatua (){
+		//Aurre: PageRank balioa gordetzen duen egitura ez da hutsa
 		//Post: PageRank balioan oinarritzat hartuta beheruntz ordenaturiko zerrenda, aktoreen izenekin
 		ArrayList<String> zerrendaOrd = new ArrayList<>();
 		@SuppressWarnings("unchecked")

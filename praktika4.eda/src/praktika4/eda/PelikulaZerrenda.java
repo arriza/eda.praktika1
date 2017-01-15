@@ -35,8 +35,6 @@ public class PelikulaZerrenda {
 	public void gehituPelikula(Pelikula p){
 		if(!PelikulaZerrenda.getPelikulaZerrenda().zerrendanDago(p.getIzenburua())){
 			PelikulaZerrenda.getPelikulaZerrenda().z1.put(p.getIzenburua(), p);
-		}else{
-			System.out.println(p.getIzenburua()+" pelikula badago zerrendan");
 		}
 	}
 	//pelikula zerrendaren tamaina
